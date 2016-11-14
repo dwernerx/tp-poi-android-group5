@@ -1,0 +1,504 @@
+<!--<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"-->
+    <!--xmlns:tools="http://schemas.android.com/tools"-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="match_parent"-->
+    <!--android:background="@android:color/black"-->
+    <!--android:orientation="vertical">-->
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <!--<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:orientation="horizontal">-->
+
+
+        <!--<ImageView xmlns:android="http://schemas.android.com/apk/res/android"-->
+            <!--android:id="@+id/imgGenero"-->
+            <!--android:layout_width="@dimen/icono"-->
+            <!--android:layout_height="@dimen/icono"-->
+            <!--/>-->
+
+        <!--<TextView xmlns:android="http://schemas.android.com/apk/res/android"-->
+            <!--xmlns:tools="http://schemas.android.com/tools"-->
+            <!--android:id="@+id/pelicula_genero"-->
+            <!--style="?android:attr/textAppearanceLarge"-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="match_parent"-->
+            <!--android:fontFamily="typeface:BOLD"-->
+            <!--android:padding="16dp"-->
+            <!--android:textIsSelectable="true"-->
+            <!--tools:context=".PeliculaDetailFragment" />-->
+
+    <!--</LinearLayout>-->
+    <!-- lblPoi o poi_detail???????????/-->
+    <!--<TextView xmlns:android="http://schemas.android.com/apk/res/android"-->
+        <!--xmlns:tools="http://schemas.android.com/tools"-->
+        <!--android:id="@+id/poi_detail"-->
+        <!--style="?android:attr/textAppearanceMedium"-->
+        <!--android:textAppearance="@android:style/TextAppearance.DeviceDefault.Large.Inverse"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="match_parent"-->
+        <!--android:padding="50dp"-->
+        <!--android:textIsSelectable="true"-->
+        <!--tools:context=".PoiDetailFragment"-->
+        <!--/>-->
+
+    <!--<TableLayout-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:stretchColumns="2">-->
+
+        <!--<TableRow>-->
+
+            <!--<TextView-->
+                <!--android:layout_column="1"-->
+                <!--android:text="@string/poi_direccion"-->
+                <!--style="?android:attr/textAppearanceMedium"-->
+                <!--android:textStyle="bold"-->
+                <!--android:textColor="@color/colorPrimaryDark"-->
+                <!--android:padding="16dip"-->
+                 <!--/>-->
+
+            <!--<TextView xmlns:android="http://schemas.android.com/apk/res/android"-->
+                <!--xmlns:tools="http://schemas.android.com/tools"-->
+                <!--android:id="@+id/poi_direccion"-->
+                <!--style="?android:attr/textAppearanceMedium"-->
+                <!--android:textColor="@color/colorPrimaryDark"-->
+                <!--android:textAppearance="@android:style/TextAppearance.DeviceDefault.Medium.Inverse"-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:padding="16dp"-->
+                <!--android:textIsSelectable="true"-->
+                <!--tools:context=".PoiDetailFragment"-->
+                <!--/>-->
+        <!--</TableRow>-->
+
+        <!--<TableRow>-->
+            <!--<TextView-->
+                <!--android:layout_column="1"-->
+                <!--android:text="@string/poi_horario"-->
+                <!--style="?android:attr/textAppearanceMedium"-->
+                <!--android:textStyle="bold"-->
+                <!--android:textColor="@color/colorPrimaryDark"-->
+                <!--android:padding="16dip"-->
+                <!--/>-->
+
+            <!--<TextView xmlns:android="http://schemas.android.com/apk/res/android"-->
+                <!--xmlns:tools="http://schemas.android.com/tools"-->
+                <!--android:id="@+id/poi_horario"-->
+                <!--style="?android:attr/textAppearanceMedium"-->
+                <!--android:textColor="@color/colorPrimaryDark"-->
+                <!--android:textAppearance="@android:style/TextAppearance.DeviceDefault.Medium.Inverse"-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:padding="16dp"-->
+                <!--android:textIsSelectable="true"-->
+                <!--tools:context=".PoiDetailFragment"-->
+                <!--/>-->
+        <!--</TableRow>-->
+
+        <!--<TableRow>-->
+            <!--<TextView-->
+                <!--android:layout_column="1"-->
+                <!--android:text="@string/poi_infoAdicional"-->
+                <!--style="?android:attr/textAppearanceMedium"-->
+                <!--android:textStyle="bold"-->
+                <!--android:textColor="@color/colorPrimaryDark"-->
+                <!--android:padding="16dip"-->
+                <!--/>-->
+
+            <!--<TextView xmlns:android="http://schemas.android.com/apk/res/android"-->
+                <!--xmlns:tools="http://schemas.android.com/tools"-->
+                <!--android:id="@+id/poi_infoAdicional"-->
+                <!--style="?android:attr/textAppearanceMedium"-->
+                <!--android:textColor="@color/colorPrimaryDark"-->
+                <!--android:textAppearance="@android:style/TextAppearance.DeviceDefault.Medium.Inverse"-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:padding="16dp"-->
+                <!--android:textIsSelectable="true"-->
+                <!--tools:context=".PoiDetailFragment"-->
+                <!--/>-->
+        <!--</TableRow>-->
+
+    <!--</TableLayout>-->
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="6dp"
+        >
+
+        <TextView
+            android:layout_column="1"
+            android:text="@string/poi_direccion"
+            style="?android:attr/textAppearanceMedium"
+            android:textStyle="bold"
+            android:textColor="@color/colorPrimaryDark"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="16dip"
+            />
+
+        <TextView xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:tools="http://schemas.android.com/tools"
+            android:id="@+id/poi_direccion"
+            style="?android:attr/textAppearanceMedium"
+            android:textColor="@color/colorPrimaryDark"
+            android:textAppearance="@android:style/TextAppearance.DeviceDefault.Medium.Inverse"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="16dp"
+            android:textIsSelectable="true"
+            tools:context=".PoiDetailFragment"
+            />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_column="1"
+            android:text="@string/poi_horario"
+            style="?android:attr/textAppearanceMedium"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textStyle="bold"
+            android:textColor="@color/colorPrimaryDark"
+            android:padding="16dip"
+            />
+
+        <TextView xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:tools="http://schemas.android.com/tools"
+            android:id="@+id/poi_horario"
+            style="?android:attr/textAppearanceMedium"
+            android:textColor="@color/colorPrimaryDark"
+            android:textAppearance="@android:style/TextAppearance.DeviceDefault.Medium.Inverse"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="16dp"
+            android:textIsSelectable="true"
+            tools:context=".PoiDetailFragment"
+            />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_column="1"
+            android:id="@+id/poi_particular_nombre"
+            style="?android:attr/textAppearanceMedium"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textStyle="bold"
+            android:textColor="@color/colorPrimaryDark"
+            android:padding="16dip"
+            />
+
+        <TextView xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:tools="http://schemas.android.com/tools"
+            android:id="@+id/poi_particular_info"
+            style="?android:attr/textAppearanceMedium"
+            android:textColor="@color/colorPrimaryDark"
+            android:textAppearance="@android:style/TextAppearance.DeviceDefault.Medium.Inverse"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="16dp"
+            android:textIsSelectable="true"
+            tools:context=".PoiDetailFragment"
+            />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_marginTop="@dimen/layout_division"
+        >
+
+        <!--<LinearLayout-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:orientation="vertical">-->
+            <TextView
+                android:layout_column="1"
+                android:text="@string/poi_calificacion"
+                style="?android:attr/textAppearanceMedium"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textStyle="bold"
+                android:textColor="@color/colorPrimaryDark"
+                android:textAlignment="center"
+                android:padding="16dip"
+                />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <RatingBar
+                android:id="@+id/poi_calificacion"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                style="?android:attr/ratingBarStyleIndicator"
+                android:numStars="5"
+                android:isIndicator="true"
+                android:stepSize="0.5"
+                android:layout_marginLeft="@dimen/text_margin"
+                tools:context=".PoiDetailFragment"
+                />
+            <!--android:layout_alignParentLeft="true"-->
+            <!--android:layout_alignParentTop="true"-->
+            <TextView
+                android:layout_column="1"
+                android:id="@+id/poi_promedio"
+                style="?android:attr/textAppearanceMedium"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textStyle="bold"
+                android:textColor="@color/colorPrimaryDark"
+                android:layout_marginLeft="@dimen/text_margin"
+                android:layout_marginBottom="10dp"
+                android:padding="10dip"
+                />
+        </LinearLayout>
+
+        <!--<ProgressBar-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:id="@+id/progressBar"-->
+            <!--android:color="@color/colorRed"-->
+            <!--style="?android:attr/progressBarStyleHorizontal"-->
+            <!--android:padding="15dp"-->
+            <!--android:maxHeight="20dp"-->
+            <!--android:maxWidth="50dp"-->
+            <!--/>-->
+
+            <!--<ProgressBar-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:id="@+id/poi_promedio"-->
+            <!--android:color="@color/colorProgress"-->
+            <!--android:layout_marginLeft="15dp"-->
+            <!--android:layout_marginTop="15dp"-->
+            <!--/>-->
+
+        </LinearLayout>
+
+
+
+    <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginLeft="0dp"
+            android:layout_marginTop="10dp">
+
+            <TextView
+                android:layout_column="1"
+                android:text="@string/poi_fav"
+                style="?android:attr/textAppearanceMedium"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textStyle="bold"
+                android:textColor="@color/colorPrimaryDark"
+                android:layout_marginRight="20dp"
+                android:layout_marginLeft="20dp"
+                />
+        <!--android:padding="10dip"-->
+
+            <CheckBox
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/checkbox_favorito"
+                android:theme="@style/checkBoxStyle"
+                android:clickable="false"
+                android:layout_marginBottom="5dp"
+                />
+
+        </LinearLayout>
+
+    <!--</LinearLayout>-->
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        >
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/poi_reviews"
+            android:textSize="23dp"
+            android:textStyle="bold|italic"
+            android:textColor="@color/colorDarkBlue"
+            android:textAlignment="center"
+            android:layout_marginTop="@dimen/layout_division_small"
+            android:padding="20dip"
+
+            />
+        <!--android:theme="@style/UnderlineText"-->
+        <!---->
+        <!--style="?android:attr/textAppearanceLarge"-->
+<!--****************************list review opcion 1********************************-->
+        <!--TODO lo que esta en review_row se ve mejor-->
+        <!--<ListView-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:id="@+id/poi_reviews">-->
+
+            <!--<LinearLayout-->
+                <!--android:layout_width="wrap_content"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:orientation="vertical">-->
+
+                <!--<TextView-->
+                    <!--android:layout_width="match_parent"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:id="@+id/review_usuario"-->
+                    <!--android:textSize="30px"-->
+                    <!--tools:context=".ReviewAdapter"-->
+                    <!--/>-->
+
+                <!--<RatingBar-->
+                    <!--android:layout_width="wrap_content"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:id="@+id/review_calificacion"-->
+                    <!--android:theme="@style/RatingBar"-->
+                    <!--android:numStars="5"-->
+                    <!--android:isIndicator="true"-->
+
+                    <!--tools:context=".ReviewAdapter"-->
+                    <!--/>-->
+
+                <!--<TextView-->
+                    <!--android:layout_width="match_parent"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:id="@+id/review_comentario"-->
+                    <!--android:textSize="20px"-->
+                    <!--android:padding="26px"-->
+                    <!--tools:context=".ReviewAdapter"-->
+                    <!--/>-->
+            <!--</LinearLayout>-->
+
+
+
+            <!--<TextView-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:id="@+id/calificacion_review"-->
+                <!--/>-->
+
+        <!--</ListView>-->
+<!--****************************list review opcion 1********************************-->
+<!--****************************list review opcion 2********************************-->
+        <!--<ListView xmlns:android="http://schemas.android.com/apk/res/android"-->
+            <!--xmlns:app="http://schemas.android.com/apk/res-auto"-->
+            <!--xmlns:tools="http://schemas.android.com/tools"-->
+            <!--android:id="@+id/poi_review_list"-->
+            <!--android:name="unsam.edu.ar.pois_app.PoiDetailFragment"-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_marginLeft="16dp"-->
+            <!--android:layout_marginRight="16dp"-->
+            <!--tools:context="unsam.edu.ar.pois_app.adapter.ReviewAdapter"-->
+            <!--tools:listitem="@layout/review_row" />-->
+<!--****************************list review opcion 2********************************-->
+<!--****************************list review opcion 3********************************-->
+        <ListView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/poi_review_list"
+
+            tools:context="unsam.edu.ar.pois_app.PoiDetailFragment"
+            tools:listitem="@layout/review_row"
+            />
+<!--****************************list review opcion 3********************************-->
+    </LinearLayout>
+
+    <!--________________________________________________________________________________________________-->
+
+    <!--<TextView xmlns:android="http://schemas.android.com/apk/res/android"-->
+        <!--xmlns:tools="http://schemas.android.com/tools"-->
+        <!--android:id="@+id/poi_direccion"-->
+        <!--style="?android:attr/textAppearanceMedium"-->
+        <!--android:textAppearance="@android:style/TextAppearance.DeviceDefault.Medium.Inverse"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:padding="16dp"-->
+        <!--android:textIsSelectable="true"-->
+        <!--tools:context=".PoiDetailFragment"-->
+         <!--/>-->
+
+    <!--<TextView xmlns:android="http://schemas.android.com/apk/res/android"-->
+        <!--xmlns:tools="http://schemas.android.com/tools"-->
+        <!--android:id="@+id/poi_horario"-->
+        <!--style="?android:attr/textAppearanceMedium"-->
+        <!--android:textAppearance="@android:style/TextAppearance.DeviceDefault.Medium.Inverse"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:padding="16dp"-->
+        <!--android:textIsSelectable="true"-->
+        <!--tools:context=".PoiDetailFragment"-->
+        <!--/>-->
+<!--_____________________________________________________________________________________-->
+
+    <!--<TextView xmlns:android="http://schemas.android.com/apk/res/android"-->
+        <!--xmlns:tools="http://schemas.android.com/tools"-->
+        <!--android:id="@+id/poi_detail"-->
+        <!--style="?android:attr/textAppearanceMedium"-->
+        <!--android:textAppearance="@android:style/TextAppearance.DeviceDefault.Medium.Inverse"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:padding="30dp"-->
+        <!--android:textIsSelectable="true"-->
+        <!--tools:context=".PoiDetailFragment"-->
+        <!--/>-->
+    <!--<CheckBox android:id="@+id/checkbox_fav"-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:text="@string/poi_fav"-->
+        <!--android:clickable="false"/>
+        TODO: CheckBox
+        -->
+
+    <!--<RatingBar-->
+        <!--android:id="@+id/poi_calificacion"-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:theme="@style/RatingBar"-->
+        <!--android:numStars="5"-->
+        <!--android:isIndicator="true"-->
+        <!--tools:context=".PoiDetailFragment"-->
+        <!--/>
+        TODO RatingBar
+        -->
+
+
+    <!--<TextView xmlns:android="http://schemas.android.com/apk/res/android"-->
+        <!--xmlns:tools="http://schemas.android.com/tools"-->
+        <!--android:id="@+id/pelicula_sinopsis"-->
+        <!--style="?android:attr/textAppearanceMedium"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="match_parent"-->
+        <!--android:padding="16dp"-->
+        <!--android:textIsSelectable="true"-->
+        <!--tools:context=".PeliculaDetailFragment" />-->
+
+</LinearLayout>

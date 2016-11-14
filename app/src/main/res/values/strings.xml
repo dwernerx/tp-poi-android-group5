@@ -1,0 +1,12 @@
+<resources>
+    <!--<string name="app_name">Pois-App</string>-->
+    <string name="app_name">Points of Interest - Grupo 5</string>
+    <string name="title_poi_detail">Detalles Poi</string>
+    <string name="poi_direccion">Dirección: </string>
+    <string name="poi_horario">Horario: </string>
+    <string name="poi_fav">Favorito</string>
+    <!--<string name="poi_reviews"><u>Reviews</u></string>-->
+    <string name="poi_reviews">Reviews</string>
+    <string name="poi_calificacion">Calificación</string>
+
+</resources>

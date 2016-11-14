@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!--originales-->
+    <!--<color name="colorPrimary">#3F51B5</color>-->
+    <!--<color name="colorPrimaryDark">#303F9F</color>-->
+    <!--<color name="colorAccent">#FF4081</color>-->
+
+    <!--<color name="colorPrimary">#000</color>-->
+    <!--<color name="colorPrimaryDark">#e65100</color>-->
+    <!--<color name="colorAccent">#e65100</color>-->
+
+    <!--boludeando con los colores... si querés cambiarlos, hacelo-->
+    <color name="colorPrimary">#3A571C</color>
+    <!--<color name="colorPrimaryDark">#2a2c2e</color>-->
+    <color name="colorPrimaryDark">#000</color>
+    <color name="colorAccent">#cecdcd</color>
+
+    <!--<color name="colorStars">#ffce00</color>-->
+    <color name="colorDarkBlue">#0d3442</color>
+    <color name="colorGrey">#9b9ea7</color>
+
+    <color name="colorWhite">#fff</color>
+    <color name="colorRed">#e60000</color>
+
+    <!--<color name="check_1">#</color>-->
+    <!--<color name="check_2">#</color>-->
+
+    <!--http://www.color-hex.com/-->
+</resources>
