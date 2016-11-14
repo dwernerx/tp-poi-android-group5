@@ -80,8 +80,8 @@ public class PoiListFragment extends ListFragment {
         super.onCreate(savedInstanceState);
         setListAdapter(new PoiAdapter(
                 getActivity(),
-                RepositorioPois.getInstance().getPois(null, 10)));
-
+//                RepositorioPois.getInstance().getPois(null, 10)));
+                RepositorioPois.getInstance().getPois(null)));
     }
 
     @Override

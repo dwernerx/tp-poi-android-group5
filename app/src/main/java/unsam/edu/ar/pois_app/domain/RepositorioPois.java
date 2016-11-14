@@ -7,11 +7,11 @@ import java.util.List;
 
 public class RepositorioPois {
     private List<Poi> pois;
-    private static final int MAX_RESULTS = 10;
+    private static final int MAX_RESULTS = 20;//10;
     private static RepositorioPois ourInstance;// = new RepositorioPois();
 
     private RepositorioPois() {
-        pois = new ArrayList<Poi>();
+        pois = new ArrayList<>();
     }
 
     public static RepositorioPois getInstance() {
@@ -93,7 +93,7 @@ public class RepositorioPois {
 
     public List<Poi> getPois(String nombre, int max) {
         Iterator<Poi> it = pois.iterator();
-        List<Poi> result = new ArrayList<Poi>();
+        List<Poi> result = new ArrayList<>();
         while (it.hasNext() && max > 0) {
             Poi poi = it.next();
             max--;

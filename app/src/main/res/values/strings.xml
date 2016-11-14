@@ -7,6 +7,6 @@
     <string name="poi_fav">Favorito</string>
     <!--<string name="poi_reviews"><u>Reviews</u></string>-->
     <string name="poi_reviews">Reviews</string>
-    <string name="poi_calificacion">Calificación</string>
+    <string name="poi_calificacion">Calificación General</string>
 
 </resources>
