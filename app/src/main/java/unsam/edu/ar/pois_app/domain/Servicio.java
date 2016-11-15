@@ -1,19 +1,13 @@
 package unsam.edu.ar.pois_app.domain;
 
-
 public class Servicio {
     private String nombre;
-//    private HorarioDeAtencion horario;
     private String horario;
 
-    public Servicio(String nombre_, /*HorarioDeAtencion*/String horario_){
+    public Servicio(String nombre_, String horario_){
         this.nombre = nombre_;
         this.horario = horario_;
     }
-
-//    public Boolean estaDisponible(/*Date*/String unHorario) {
-//        return this.horario.estaDisponible(unHorario);
-//    }
 
     public String getNombre(){
         return this.nombre;
@@ -24,7 +18,7 @@ public class Servicio {
     }
 
     public String getHorario(){
-        return this.nombre;
+        return this.horario;
     }
 
     public void setHorario(String horario){
@@ -33,6 +27,6 @@ public class Servicio {
 
     @Override
     public String toString(){
-        return nombre + "  " + horario + " hs.";
+        return nombre + " " + horario/* + " hs."*/;
     }
 }

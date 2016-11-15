@@ -206,7 +206,7 @@
 
         <TextView
             android:layout_column="1"
-            android:id="@+id/poi_particular_nombre"
+            android:id="@+id/poi_dato_particular_nombre"
             style="?android:attr/textAppearanceMedium"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -217,7 +217,7 @@
 
         <TextView xmlns:android="http://schemas.android.com/apk/res/android"
             xmlns:tools="http://schemas.android.com/tools"
-            android:id="@+id/poi_particular_info"
+            android:id="@+id/poi_dato_particular_info"
             style="?android:attr/textAppearanceMedium"
             android:textColor="@color/colorPrimaryDark"
             android:textAppearance="@android:style/TextAppearance.DeviceDefault.Medium.Inverse"
@@ -432,10 +432,11 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:id="@+id/poi_review_list"
+            android:clickable="false"
 
-            tools:context="unsam.edu.ar.pois_app.PoiDetailFragment"
             tools:listitem="@layout/review_row"
             />
+        <!--tools:context="unsam.edu.ar.pois_app.PoiDetailFragment"-->
 <!--****************************list review opcion 3********************************-->
     </LinearLayout>
 

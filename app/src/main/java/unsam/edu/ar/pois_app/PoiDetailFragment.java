@@ -84,16 +84,13 @@ public class PoiDetailFragment extends Fragment {
 //                imgTipo.setImageDrawable(getResources().getDrawable(new TipoPoiAdapter().getIconoTipo(poi)));
 
 //                ((TextView) rootView.findViewById(R.id.poi_detail)).setText(poi.getNombre());
-//                ((TextView) rootView.findViewById(R.id.poi_detail)).setText("Horario: \n" + poi.getHorario());
-//                ((TextView) rootView.findViewById(R.id.poi_detail)).setText("Direccion: \n" + poi.getDireccion());
 
                 ((TextView) rootView.findViewById(R.id.poi_horario)).setText(poi.getHorario());
                 ((TextView) rootView.findViewById(R.id.poi_direccion)).setText(poi.getDireccion());
-                ((TextView) rootView.findViewById(R.id.poi_particular_nombre)).setText(poi.getNombreDetalleParticular());
-                ((TextView) rootView.findViewById(R.id.poi_particular_info)).setText(poi.getDetalleParticular());
+                ((TextView) rootView.findViewById(R.id.poi_dato_particular_nombre)).setText(poi.getNombreDetalleParticular());
+                ((TextView) rootView.findViewById(R.id.poi_dato_particular_info)).setText(poi.getDetalleParticular());
 
                 ((CheckBox) rootView.findViewById(R.id.checkbox_favorito)).setChecked(poi.isEstaEnFavoritos());
-//                ((RatingBar) rootView.findViewById(R.id.poi_calificacion)).setRating((float) poi.getPromedioDeCalificaciones());
                 RatingBar ratingBar = ((RatingBar) rootView.findViewById(R.id.poi_calificacion));
                 ratingBar.setRating((float) poi.getPromedioDeCalificaciones());
 //                ratingBar.setMinimumWidth(10);
@@ -105,14 +102,14 @@ public class PoiDetailFragment extends Fragment {
 //                ProgressBar progressBar = (ProgressBar) rootView.findViewById(R.id.progressBar);
 //                progressBar.setProgress((int) poi.getPromedioDeCalificaciones());
 
-                if(poi.getReviews().isEmpty()){
+//                if(poi.getReviews().isEmpty()){
                     //TODO textview que diga algo como que no tiene reviews?
-                } else {
+//                } else {
                     ((ListView) rootView.findViewById(R.id.poi_review_list)).setAdapter(new Review2Adapter(getContext(), poi.getReviews()));
                     //TODO ultima version de prueba de la lista de reviews (en fragment_poi_detail creo que sería la opcion3)
 
                     //TODO lo que está en opcion1 es lo que está en review_row
-                }
+//                }
 
 
 
