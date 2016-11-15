@@ -21,7 +21,7 @@ public class PoisTest {
 
     @Before
     public void init(){
-        colectivo = new Colectivo("78","lalala",null,true);
+        colectivo = new Colectivo("78","lalala",null, "0",true);
         cgp = new Cgp("Calle falsa 123, Springfield", "8:00 a 19:00", false, "13");
 //        colectivo2 = new Colectivo("343", "dfsdfdf", null, false);//new ArrayList<Review>[{new Review("user", "comentario",1)}]);
 

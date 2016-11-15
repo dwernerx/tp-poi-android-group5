@@ -36,7 +36,8 @@ public class Colectivo extends Poi {
 
     @Override
     public String getNombre() {
-        return this.getTipo() + " " + linea;
+        return "Linea " + linea;
+//        return this.getTipo() + " " + linea;
     }
 
     @Override

@@ -11,6 +11,13 @@
     android:layout_height="match_parent"
     android:orientation="vertical">
 
+    <!--<ImageView xmlns:android="http://schemas.android.com/apk/res/android"-->
+        <!--android:id="@+id/imgGenero"-->
+        <!--android:layout_width="@dimen/icono"-->
+        <!--android:layout_height="@dimen/icono"-->
+        <!--/>-->
+    <!--TODO ponemos icono? junto al tipo de poi. y  lo sacamos de la barra?-->
+
     <!--<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"-->
         <!--android:layout_width="match_parent"-->
         <!--android:layout_height="wrap_content"-->

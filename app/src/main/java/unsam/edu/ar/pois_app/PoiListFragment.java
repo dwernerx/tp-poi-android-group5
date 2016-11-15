@@ -3,16 +3,30 @@ package unsam.edu.ar.pois_app;
 import android.app.Activity;
 import android.os.Bundle;
 import android.support.v4.app.ListFragment;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.animation.Animation;
+import android.widget.CheckBox;
+import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.ListView;
+import android.widget.Toast;
 
+import java.util.List;
+
+import retrofit.Call;
+import retrofit.Callback;
+import retrofit.GsonConverterFactory;
+import retrofit.Response;
+import retrofit.Retrofit;
 import unsam.edu.ar.pois_app.adapter.PoiAdapter;
 import unsam.edu.ar.pois_app.domain.Poi;
 import unsam.edu.ar.pois_app.domain.RepositorioPois;
+import unsam.edu.ar.pois_app.service.PoisService;
 
 
 /**
@@ -24,8 +38,9 @@ import unsam.edu.ar.pois_app.domain.RepositorioPois;
  * Activities containing this fragment MUST implement the {@link Callbacks}
  * interface.
  */
-public class PoiListFragment extends ListFragment {
+public class PoiListFragment extends ListFragment implements View.OnClickListener {
 
+    public static int MIN_BUSQUEDA_POIS = 2;
     /**
      * The serialization (saved instance state) Bundle key representing the
      * activated item position. Only used on tablets.
@@ -42,6 +57,8 @@ public class PoiListFragment extends ListFragment {
      * The current activated item position. Only used on tablets.
      */
     private int mActivatedPosition = ListView.INVALID_POSITION;
+
+    private PoisService poiService;
 
     /**
      * A callback interface that all activities containing this fragment must
@@ -78,10 +95,69 @@ public class PoiListFragment extends ListFragment {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        // Esta URL apunta al proyecto con ORM de Grails
+        // 		val API_URL = "http://10.0.2.2:8080/videoclub-ui-orm-grails"
+        // Esta URL apunta a la solución en Grails con Homes hechos en Xtend
+        //String SERVER_IP = "10.0.2.2";
+
+        // IMPORTANTE
+        // Por un bug de retrofit 2.0, la BASE_URL debe tener una / al final
+        // y la dirección del service debe comenzar sin /, como un path relativo
+        String BASE_URL ="http://10.0.2.2:9006/";  //TODO esta bien?
+        /*"http://10.0.2.2:8080/videoclub-ui-grails-homes-xtend/"*/
+
+        Retrofit retrofit = new Retrofit.Builder()
+                .baseUrl(BASE_URL)
+                .addConverterFactory(GsonConverterFactory.create())
+                .build();
+
+        poiService = retrofit.create(PoisService.class);
+
+        //TODO esta parte no está en el ej de peliculas
         setListAdapter(new PoiAdapter(
                 getActivity(),
 //                RepositorioPois.getInstance().getPois(null, 10)));
                 RepositorioPois.getInstance().getPois(null)));
+
+//        Call<List<Poi>> poiCall = poiService.getPois();
+
+        //poiCall.execute(Response<List<Poi>> response, Retrofit retrofit);
+
+//        poiCall.enqueue(new Callback<List<Poi>>() {
+//            @Override
+//            public void onResponse(Response<List<Poi>> response, Retrofit retrofit) {
+//                List<Poi> pois = response.body();
+//
+//                setListAdapter(new PoiAdapter(
+//                        getActivity(),
+//                        pois));
+//                //RepoPois.getInstance().getPois(null, 10)));
+//            }
+    }
+
+    private void buscarPois() {
+        EditText campoBusqueda = (EditText) this.getView().findViewById(R.id.nombreContiene);
+        String titulo = campoBusqueda.getText().toString();
+
+        Call<List<Poi>> poiCall = poiService.getPois(titulo);
+
+        poiCall.enqueue(new Callback<List<Poi>>() {
+            @Override
+            public void onResponse(Response<List<Poi>> response, Retrofit retrofit) {
+                List<Poi> pois = response.body();
+
+                setListAdapter(new PoiAdapter(
+                        getActivity(),
+                        pois));
+            }
+
+            @Override
+            public void onFailure(Throwable t) {
+                t.printStackTrace();
+                Log.e("PoisApp", t.getMessage());
+            }
+        });
     }
 
     @Override
@@ -98,6 +174,43 @@ public class PoiListFragment extends ListFragment {
                 && savedInstanceState.containsKey(STATE_ACTIVATED_POSITION)) {
             setActivatedPosition(savedInstanceState.getInt(STATE_ACTIVATED_POSITION));
         }
+
+        // Comportamiento del checkbox que indica si se busca a medida que se escribe
+        final CheckBox chkBuscar = (CheckBox) view.findViewById(R.id.chkBuscarOnline);
+        final View myView = view;
+        chkBuscar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                ImageButton btnBuscar = (ImageButton) myView.findViewById(R.id.btnBuscar);
+                if (chkBuscar.isChecked()) {
+                    btnBuscar.setVisibility(View.INVISIBLE);
+                } else {
+                    btnBuscar.setVisibility(View.VISIBLE);
+                }
+            }
+        });
+
+        // Comportamiento del título de búsqueda
+        EditText tituloContiene = (EditText) view.findViewById(R.id.nombreContiene);
+        tituloContiene.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+            }
+
+            @Override
+            public void afterTextChanged(Editable editable) {
+                if (chkBuscar.isChecked() && editable.length() >= MIN_BUSQUEDA_POIS) {
+                    buscarPois();
+                }
+            }
+        });
+
+        ((ImageButton) view.findViewById(R.id.btnBuscar)).setOnClickListener(this);
     }
 
     @Override
@@ -126,7 +239,12 @@ public class PoiListFragment extends ListFragment {
 
         // Notify the active callbacks interface (the activity, if the
         // fragment is attached to one) that an item has been selected.
-        Poi poi = RepositorioPois.getInstance().getPoi(id);
+//        Poi poi = RepositorioPois.getInstance().getPoi(id); //TODO ya no está en peliculas rest
+//        mCallbacks.onItemSelected(poi);
+
+        Poi poi = (Poi) listView.getAdapter().getItem(position);
+        Toast.makeText(getContext(), poi.getNombre(), Toast.LENGTH_LONG).show();
+
         mCallbacks.onItemSelected(poi);
     }
 
@@ -164,6 +282,11 @@ public class PoiListFragment extends ListFragment {
         }
 
         mActivatedPosition = position;
+    }
+
+    @Override
+    public void onClick(View v) {
+        buscarPois();
     }
 }
 

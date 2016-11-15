@@ -41,6 +41,9 @@ public class PoiDetailActivity extends AppCompatActivity {
             actionBar.setDisplayHomeAsUpEnabled(true);
         }
 
+        // Show the Up button in the action bar.
+//        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
         // savedInstanceState is non-null when there is fragment state
         // saved from previous configurations of this activity
         // (e.g. when rotating the screen from portrait to landscape).

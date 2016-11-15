@@ -6,6 +6,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import java.util.List;
@@ -18,6 +19,7 @@ public class PoiAdapter extends ArrayAdapter<Poi> {
     public PoiAdapter(Context context, List<Poi> pois) {
         super(context, R.layout.poi_row, pois);
     }
+//    private TipoPoiAdapter tipoPoiAdapter = new TipoPoiAdapter();
 
     @Override
     public long getItemId(int position) {
@@ -34,6 +36,11 @@ public class PoiAdapter extends ArrayAdapter<Poi> {
 
         TextView tvPoi = (TextView) rowView.findViewById(R.id.lblPoi);
         tvPoi.setText(poi.getNombre());
+
+//        int img = tipoPoiAdapter.getIconoTipoPoi(poi);
+        ImageView imgTipo = ((ImageView) rowView.findViewById(R.id.img_tipo_poi));
+//        imgTipo.setImageDrawable(getDrawable(tipoPoiAdapter.getIconoTipoPoi(poi)));
+        imgTipo.setImageDrawable(getContext().getResources().getDrawable(new TipoPoiAdapter().getIconoTipoPoi(poi)));
 
 //            TextView tvActores = (TextView) rowView.findViewById(R.id.lblActores);
 //            tvActores.setText(poi.getActores());

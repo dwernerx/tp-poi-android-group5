@@ -9,4 +9,9 @@
     <string name="poi_reviews">Reviews</string>
     <string name="poi_calificacion">Calificación General</string>
 
+    <string name="buscar">Buscar</string>
+    <string name="buscarInmediatamente">Buscar mientras se escribe</string>
+
+    <string name="tipo_poi">Tipo de poi</string>
+
 </resources>

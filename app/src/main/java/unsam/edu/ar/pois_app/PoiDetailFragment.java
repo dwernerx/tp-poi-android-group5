@@ -9,6 +9,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.CheckBox;
+import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.ProgressBar;
 import android.widget.RatingBar;
@@ -38,7 +39,6 @@ public class PoiDetailFragment extends Fragment {
     /**
      * The dummy content this fragment is presenting.
      */
-//    private DummyContent.DummyItem mItem;
     private Poi poi;
 
     /**
@@ -80,6 +80,9 @@ public class PoiDetailFragment extends Fragment {
             View rootView = inflater.inflate(R.layout.fragment_poi_detail, container, false);
             // Show the dummy content as text in a TextView.
             if (poi != null) {
+//                ImageView imgTipo = ((ImageView) rootView.findViewById(R.id.imgTipoPoi));
+//                imgTipo.setImageDrawable(getResources().getDrawable(new TipoPoiAdapter().getIconoTipo(poi)));
+
 //                ((TextView) rootView.findViewById(R.id.poi_detail)).setText(poi.getNombre());
 //                ((TextView) rootView.findViewById(R.id.poi_detail)).setText("Horario: \n" + poi.getHorario());
 //                ((TextView) rootView.findViewById(R.id.poi_detail)).setText("Direccion: \n" + poi.getDireccion());
@@ -102,10 +105,15 @@ public class PoiDetailFragment extends Fragment {
 //                ProgressBar progressBar = (ProgressBar) rootView.findViewById(R.id.progressBar);
 //                progressBar.setProgress((int) poi.getPromedioDeCalificaciones());
 
-                ((ListView) rootView.findViewById(R.id.poi_review_list)).setAdapter(new Review2Adapter(getContext(), poi.getReviews()));
-                //TODO ultima version de prueba de la lista de reviews (en fragment_poi_detail creo que sería la opcion3)
+                if(poi.getReviews().isEmpty()){
+                    //TODO textview que diga algo como que no tiene reviews?
+                } else {
+                    ((ListView) rootView.findViewById(R.id.poi_review_list)).setAdapter(new Review2Adapter(getContext(), poi.getReviews()));
+                    //TODO ultima version de prueba de la lista de reviews (en fragment_poi_detail creo que sería la opcion3)
 
-//                TODO lo que está en opcion1 es lo que está en review_row
+                    //TODO lo que está en opcion1 es lo que está en review_row
+                }
+
 
 
 

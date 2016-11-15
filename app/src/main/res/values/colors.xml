@@ -9,8 +9,9 @@
     <!--<color name="colorPrimaryDark">#e65100</color>-->
     <!--<color name="colorAccent">#e65100</color>-->
 
-    <!--boludeando con los colores... si querés cambiarlos, hacelo-->
-    <color name="colorPrimary">#3A571C</color>
+    <!--<color name="colorPrimary">#3A571C</color>-->
+    <color name="colorPrimary">#094054</color>
+    <!--#034c67-->
     <!--<color name="colorPrimaryDark">#2a2c2e</color>-->
     <color name="colorPrimaryDark">#000</color>
     <color name="colorAccent">#cecdcd</color>
@@ -21,9 +22,6 @@
 
     <color name="colorWhite">#fff</color>
     <color name="colorRed">#e60000</color>
-
-    <!--<color name="check_1">#</color>-->
-    <!--<color name="check_2">#</color>-->
 
     <!--http://www.color-hex.com/-->
 </resources>
