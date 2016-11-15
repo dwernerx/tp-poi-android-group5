@@ -64,11 +64,11 @@ public class RepositorioPois {
         RepositorioPois.getInstance().agregarPoi(new Colectivo("78", null, null, "20", false, reviews5));
         RepositorioPois.getInstance().agregarPoi(new Colectivo("237", null, null, "12", true, reviews6));
 //Locales comerciales
-        RepositorioPois.getInstance().agregarPoi(new LocalComercial("Don Manolo", "Quirno 343, Flores", "10:30 a 20:30", false, "Verduleria"));
-        RepositorioPois.getInstance().agregarPoi(new LocalComercial("Mario", "Av. Raúl Scalabrini Ortiz 1240, Palermo", "08:00 a 20:00", false, "Vivero"));
-        RepositorioPois.getInstance().agregarPoi(new LocalComercial("Duomo Gelato", "Gral. Roca 3113, Villa Ballester", "11:00 a 23:30", true, "Heladeria"));
-        RepositorioPois.getInstance().agregarPoi(new LocalComercial("Cremolatti", "Av. de los Constituyentes 5999, Villa Urquiza", "9:00 a 21:15", false, "Heladeria"));
-        RepositorioPois.getInstance().agregarPoi(new LocalComercial("Garabombo", "Dr. Ramón Carrillo 2314, San Martín", "09:00 a 19:00", true, "Libreria"));
+        RepositorioPois.getInstance().agregarPoi(new LocalComercial("Don Manolo", "Quirno 343, Flores", "10:30 a 20:30", false, "Verduleria", reviews5));
+        RepositorioPois.getInstance().agregarPoi(new LocalComercial("Mario", "Av. Raúl Scalabrini Ortiz 1240, Palermo", "08:00 a 20:00", false, "Vivero", reviews1));
+        RepositorioPois.getInstance().agregarPoi(new LocalComercial("Duomo Gelato", "Gral. Roca 3113, Villa Ballester", "11:00 a 23:30", true, "Heladeria",reviews4));
+        RepositorioPois.getInstance().agregarPoi(new LocalComercial("Cremolatti", "Av. de los Constituyentes 5999, Villa Urquiza", "9:00 a 21:15", false, "Heladeria", reviews2));
+        RepositorioPois.getInstance().agregarPoi(new LocalComercial("Garabombo", "Dr. Ramón Carrillo 2314, San Martín", "09:00 a 19:00", true, "Libreria", reviews3));
 //Bancos
         final Banco santander = new Banco("Santander", "Av. Urquiza 4788, Caseros", "09:30 a 18:00", false, reviews6);
         santander.agregarServicio("Transacción");
