@@ -12,7 +12,6 @@ public class LocalComercial extends Poi {
         this.nombre = nombre;
         this.rubro = rubro;
     }
-    //TODO con o sin reviews?
     public LocalComercial(String nombre, String direccion, String horario, boolean favorito, String rubro, List<Review> reviews) {
         super(direccion, horario, favorito, reviews);
         this.nombre = nombre;

@@ -18,7 +18,7 @@ public class Cgp extends Poi {
         this.numeroComuna = numeroComuna;
         this.servicios = new ArrayList<>();
     }
-    //TODO con o sin reviews?
+
     public Cgp(String direccion, String horario, boolean favorito, String numeroComuna, List<Review> reviews) {
         super(direccion, horario, favorito, reviews);
         this.numeroComuna = numeroComuna;
@@ -59,13 +59,11 @@ public class Cgp extends Poi {
 
     public String getServiciostoString(){
         List<String> serviciosStrings = new ArrayList<>();
-//        return servicios.forEach(s|s.toString());
         for(int i=0; i<this.servicios.size(); i++){
             serviciosStrings.add(this.servicios.get(i).toString());
         }
 
         return StringUtils.join("\n", serviciosStrings);
     }
-    //TODO: Servicios de cgp toString()
 
 }

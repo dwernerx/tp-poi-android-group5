@@ -10,29 +10,18 @@ import java.util.List;
 public class Colectivo extends Poi {
     private String linea;
     private String cantidadParadas;
-//    private List<Point> recorrido; //o set?
 
     public Colectivo(String linea, String direccion, String horario, String cantParadas, boolean favorito) {
         super(direccion, horario, favorito);
         this.linea = linea;
         this.cantidadParadas=cantParadas;
-//        this.recorrido = new ArrayList<Point>();   //o cantidad de paradas? TODO
     }
-    //TODO con o sin reviews?
+
     public Colectivo(String linea, String direccion, String horario, String cantParadas, boolean favorito, List<Review> reviews) {
         super(direccion, horario, favorito, reviews);
         this.linea = linea;
         this.cantidadParadas=cantParadas;
     }
-
-//    public Colectivo(String linea, String direccion/*terminal?*/,boolean favorito){
-//        super(direccion, null/*o 24 hs.?*/, favorito);
-////        super(direccion, "o 24 hs." /*o null*/, favorito);
-//        this.linea = linea;
-//    }
-    /*TODO si usamos este contructor y le mandamos "24 hs." o lo que sea, no hace falta hacer override de getHorario
-    * en direccion ponemos la terminal entonces?
-    * asi sacamos el override de getDireccion*/
 
     @Override
     public String getNombre() {

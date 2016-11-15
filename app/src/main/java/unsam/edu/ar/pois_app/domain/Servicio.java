@@ -33,6 +33,6 @@ public class Servicio {
 
     @Override
     public String toString(){
-        return nombre + "  " + horario;
+        return nombre + "  " + horario + " hs.";
     }
 }

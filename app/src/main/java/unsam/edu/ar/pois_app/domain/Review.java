@@ -32,11 +32,10 @@ public class Review implements Serializable {
     }
 
     @Override
-    public String toString(){ //es para probar algo. borrar después
-        return "\t" + usuario + "\n\t\t" + comentario /*+ " " + calificacion*/; //TODO ver como lo queremos mostrar
+    public String toString(){
+        return "\t" + usuario + "\n\t\t" + comentario /*+ " " + calificacion*/; //TODO ver como lo queremos mostrar (prueba)
 //        return usuario + " " + comentario + " " + calificacion;
     }
 
-    //TODO hacer setters??
 
 }

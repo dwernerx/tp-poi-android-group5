@@ -5,22 +5,18 @@ import java.util.List;
 
 import unsam.edu.ar.pois_app.utils.StringUtils;
 
-/**
- * Created by Laboratorio on 08/11/2016.
- */
-
 public class Banco extends Poi {
     private String nombre;
-    private List<String> servicios;// o set?
+    private List<String> servicios;
 
     public Banco(String nombre, String direccion, String horario, boolean favorito) {
-        super(/*nombre, */direccion, horario, favorito);
+        super(direccion, horario, favorito);
         this.servicios = new ArrayList<>();
         this.nombre = nombre;
     }
 //TODO con o sin reviews?
     public Banco(String nombre, String direccion, String horario, boolean favorito, List<Review> reviews) {
-        super(/*nombre, */direccion, horario, favorito, reviews);
+        super(direccion, horario, favorito, reviews);
         this.servicios = new ArrayList<>();
         this.nombre = nombre;
     }
@@ -45,8 +41,7 @@ public class Banco extends Poi {
     @Override
     public String getNombre() {
 //        return nombreBanco;
-//        return "Banco "+this.nombreBanco;  //depende de como manejemos el tipo
-        return this.getTipo()+" "+this.nombre;  //depende de como manejemos el tipo
+        return this.getTipo()+" "+this.nombre;
     }
 
     @Override
