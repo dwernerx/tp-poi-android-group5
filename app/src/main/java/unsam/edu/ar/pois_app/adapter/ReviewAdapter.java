@@ -37,14 +37,22 @@ public class ReviewAdapter extends ArrayAdapter<Review> {
             View rowView = inflater.inflate(R.layout.review_row, parent, false);
             final Review review = getItem(position);
 
+//            TextView usuario = (TextView) rowView.findViewById(R.id.review_usuario);
+//            usuario.setText(review.getUsuario());
+//            TextView comentario = (TextView) rowView.findViewById(R.id.review_comentario);
+//            comentario.setText(review.getComentario());
+//            RatingBar calificacion = (RatingBar) rowView.findViewById(R.id.review_calificacion);
+//            calificacion.setRating((float) review.getCalificacion());
+
+//            TextView calificacion = (TextView) rowView.findViewById(R.id.calificacion_review);
+//            calificacion.setText(review.getCalificacion());
+
             TextView usuario = (TextView) rowView.findViewById(R.id.review_usuario);
-            usuario.setText(review.getUsuario());
+            usuario.setText("* "+review.getUsuario());
             TextView comentario = (TextView) rowView.findViewById(R.id.review_comentario);
             comentario.setText(review.getComentario());
             RatingBar calificacion = (RatingBar) rowView.findViewById(R.id.review_calificacion);
             calificacion.setRating((float) review.getCalificacion());
-//            TextView calificacion = (TextView) rowView.findViewById(R.id.calificacion_review);
-//            calificacion.setText(review.getCalificacion());
 
 //            TextView tvActores = (TextView) rowView.findViewById(R.id.lblActores);
 //            tvActores.setText(poi.getActores());

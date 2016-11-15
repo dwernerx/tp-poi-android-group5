@@ -11,12 +11,13 @@ public interface PoisService {
 //    @GET("peliculas/{tituloContiene}")
 //    public Call<List<Pelicula>> getPeliculas(@Path("tituloContiene") String tituloContiene);
 
-    //TODO lo hice a modo de ejemplo, basandome en el de peliculas
-    @GET("pois/{nombreContiene}")
+//    @GET("pois/buscador/{nombreContiene}")
+    @GET("buscador/{nombreContiene}")
     public Call<List<Poi>> getPois(@Path("nombreContiene") String nombreContiene);
 
-    //TODO con solo el get alcanza no?    hay que hacer la busqueda?
+//    @GET("pois/buscador")
+//    public Call<List<Poi>> getPois();
 
-    @GET("/buscador")
-    Call<List<Poi>> getPois();
+    @GET("buscador")
+    public Call<List<Poi>> getPois();
 }

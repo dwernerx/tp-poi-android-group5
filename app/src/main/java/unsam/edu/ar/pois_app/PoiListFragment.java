@@ -105,6 +105,7 @@ public class PoiListFragment extends ListFragment implements View.OnClickListene
         // Por un bug de retrofit 2.0, la BASE_URL debe tener una / al final
         // y la dirección del service debe comenzar sin /, como un path relativo
         String BASE_URL ="http://10.0.2.2:9006/";  //TODO esta bien?
+//        String BASE_URL ="http://10.0.2.2:9006/pois/";
         /*"http://10.0.2.2:8080/videoclub-ui-grails-homes-xtend/"*/
 
         Retrofit retrofit = new Retrofit.Builder()
@@ -120,10 +121,10 @@ public class PoiListFragment extends ListFragment implements View.OnClickListene
 //                RepositorioPois.getInstance().getPois(null, 10)));
                 RepositorioPois.getInstance().getPois(null)));
 
-//        Call<List<Poi>> poiCall = poiService.getPois();
-
-        //poiCall.execute(Response<List<Poi>> response, Retrofit retrofit);
-
+        Call<List<Poi>> poiCall = poiService.getPois(null);   //TODO va?
+//
+//        poiCall.execute(Response<List<Poi>> response, Retrofit retrofit);
+//
 //        poiCall.enqueue(new Callback<List<Poi>>() {
 //            @Override
 //            public void onResponse(Response<List<Poi>> response, Retrofit retrofit) {
@@ -134,8 +135,17 @@ public class PoiListFragment extends ListFragment implements View.OnClickListene
 //                        pois));
 //                //RepoPois.getInstance().getPois(null, 10)));
 //            }
-    }
+//
+//            @Override
+//            public void onFailure(Throwable t) {
+//                t.printStackTrace();
+//                Log.e("PoiApp", t.getMessage());
+//                Toast.makeText(getContext(), "Ha ocurrido un error al llamar al servicio", Toast.LENGTH_LONG).show();
+//            }
+//        });
 
+    }
+//TODO sacar esto y la busqueda mientras se escribe?
     private void buscarPois() {
         EditText campoBusqueda = (EditText) this.getView().findViewById(R.id.nombreContiene);
         String titulo = campoBusqueda.getText().toString();
@@ -174,7 +184,7 @@ public class PoiListFragment extends ListFragment implements View.OnClickListene
                 && savedInstanceState.containsKey(STATE_ACTIVATED_POSITION)) {
             setActivatedPosition(savedInstanceState.getInt(STATE_ACTIVATED_POSITION));
         }
-
+//TODO sacar a partir de aca?
         // Comportamiento del checkbox que indica si se busca a medida que se escribe
         final CheckBox chkBuscar = (CheckBox) view.findViewById(R.id.chkBuscarOnline);
         final View myView = view;
@@ -242,10 +252,13 @@ public class PoiListFragment extends ListFragment implements View.OnClickListene
 //        Poi poi = RepositorioPois.getInstance().getPoi(id); //TODO ya no está en peliculas rest
 //        mCallbacks.onItemSelected(poi);
 
-        Poi poi = (Poi) listView.getAdapter().getItem(position);
-        Toast.makeText(getContext(), poi.getNombre(), Toast.LENGTH_LONG).show();
-
-        mCallbacks.onItemSelected(poi);
+        try {
+            Poi poi = (Poi) listView.getAdapter().getItem(position);
+            Toast.makeText(getContext(), poi.getNombre(), Toast.LENGTH_LONG).show();
+            mCallbacks.onItemSelected(poi);
+        }catch(Exception e){
+            Toast.makeText(getContext(), "Hubo un error al ver poi", Toast.LENGTH_LONG).show();
+        }
     }
 
     @Override
@@ -283,7 +296,7 @@ public class PoiListFragment extends ListFragment implements View.OnClickListene
 
         mActivatedPosition = position;
     }
-
+//TODO sacar?
     @Override
     public void onClick(View v) {
         buscarPois();

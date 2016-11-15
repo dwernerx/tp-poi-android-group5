@@ -4,6 +4,7 @@ import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ArrayAdapter;
 import android.widget.BaseAdapter;
 import android.widget.RatingBar;
 import android.widget.TextView;
@@ -14,42 +15,51 @@ import unsam.edu.ar.pois_app.R;
 import unsam.edu.ar.pois_app.domain.Review;
 
 
-public class Review2Adapter extends BaseAdapter {
+public class Review2Adapter extends /*BaseAdapter*/ ArrayAdapter<Review> {
 
-    private Context context;
-    private List<Review> items;
+//    private Context context;
+//    private List<Review> items;
 
-    public Review2Adapter(Context context, List<Review> items) {
-        this.context = context;
-        this.items = items;
+    public Review2Adapter(Context context, List<Review> objects) {
+        super(context,R.layout.review_row ,objects);
     }
 
-    @Override
-    public int getCount() {
-        return this.items.size();
-    }
+//    public Review2Adapter(Context context, List<Review> items) {
+//        this.context = context;
+//        this.items = items;
+//    }
 
-    @Override
-    public Review getItem(int position) {
-        return this.items.get(position);
-    }
+//    @Override
+//    public int getCount() {
+//        return this.items.size();
+//    }
+
+//    @Override
+//    public Review getItem(int position) {
+//        return this.items.get(position);
+//    }
 
     @Override
     public long getItemId(int position) {
-        return position;
+        return getItem(position).getId();
+//        return position;
     }
 
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
 
-        View rowView = convertView;
+//        View rowView = convertView;
+//
+//        if (convertView == null) {
+//            // Create a new view into the list.
+//            LayoutInflater inflater = (LayoutInflater) /*context*/ getContext()
+//                    .getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+//            rowView = inflater.inflate(R.layout.review_row, parent, false);
+//        }
 
-        if (convertView == null) {
-            // Create a new view into the list.
-            LayoutInflater inflater = (LayoutInflater) context
-                    .getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-            rowView = inflater.inflate(R.layout.review_row, parent, false);
-        }
+        LayoutInflater inflater = (LayoutInflater) getContext()
+                .getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+        View rowView = inflater.inflate(R.layout.review_row, parent, false);
 
         // Set data into the view.
 //        ImageView ivItem = (ImageView) rowView.findViewById(R.id.ivItem);
@@ -59,7 +69,7 @@ public class Review2Adapter extends BaseAdapter {
 //        tvTitle.setText(item.getTitle());
 //        ivItem.setImageResource(item.getImage());
 
-        Review review = getItem(position);
+        final Review review = getItem(position);
 
         TextView usuario = (TextView) rowView.findViewById(R.id.review_usuario);
         usuario.setText("* "+review.getUsuario());

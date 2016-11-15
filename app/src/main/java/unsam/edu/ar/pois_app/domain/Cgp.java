@@ -59,10 +59,12 @@ public class Cgp extends Poi {
 
     public String getServiciostoString(){
         List<String> serviciosStrings = new ArrayList<>();
-        for(int i=0; i<this.servicios.size(); i++){
+//        String serviciosString= "";
+        for(int i=0; i<servicios.size(); i++){
             serviciosStrings.add(this.servicios.get(i).toString());
+//            serviciosString = serviciosString + servicios.get(i).toString()+"\n";
         }
-
+//            return serviciosString;
         return StringUtils.join("\n", serviciosStrings);
     }
 
