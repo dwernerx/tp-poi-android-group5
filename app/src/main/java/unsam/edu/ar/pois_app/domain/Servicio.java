@@ -1,6 +1,8 @@
 package unsam.edu.ar.pois_app.domain;
 
-public class Servicio {
+import java.io.Serializable;
+
+public class Servicio implements Serializable{
     private String nombre;
     private String horario;
 
