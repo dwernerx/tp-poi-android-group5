@@ -38,9 +38,9 @@ import unsam.edu.ar.pois_app.service.PoisService;
  * Activities containing this fragment MUST implement the {@link Callbacks}
  * interface.
  */
-public class PoiListFragment extends ListFragment implements View.OnClickListener {
+public class PoiListFragment extends ListFragment /*implements View.OnClickListener*/ {
 
-    public static int MIN_BUSQUEDA_POIS = 2;
+//    public static int MIN_BUSQUEDA_POIS = 2;
     /**
      * The serialization (saved instance state) Bundle key representing the
      * activated item position. Only used on tablets.
@@ -104,8 +104,8 @@ public class PoiListFragment extends ListFragment implements View.OnClickListene
         // IMPORTANTE
         // Por un bug de retrofit 2.0, la BASE_URL debe tener una / al final
         // y la dirección del service debe comenzar sin /, como un path relativo
-        String BASE_URL ="http://10.0.2.2:9006/";  //TODO esta bien?
-//        String BASE_URL ="http://10.0.2.2:9006/pois/";
+//        String BASE_URL ="http://10.0.2.2:9006/";
+        String BASE_URL ="http://192.168.1.10:9006/";
         /*"http://10.0.2.2:8080/videoclub-ui-grails-homes-xtend/"*/
 
         Retrofit retrofit = new Retrofit.Builder()
@@ -115,42 +115,15 @@ public class PoiListFragment extends ListFragment implements View.OnClickListene
 
         poiService = retrofit.create(PoisService.class);
 
-        //TODO esta parte no está en el ej de peliculas
-        setListAdapter(new PoiAdapter(
-                getActivity(),
-//                RepositorioPois.getInstance().getPois(null, 10)));
-                RepositorioPois.getInstance().getPois(null)));
+        //TODO sin rest
+//        setListAdapter(new PoiAdapter(
+//                getActivity(),
+////                RepositorioPois.getInstance().getPois(null, 10)));
+//                RepositorioPois.getInstance().getPois(null)));
 
-        Call<List<Poi>> poiCall = poiService.getPois(null);   //TODO va?
+        Call<List<Poi>> poiCall = poiService.getPois();
 //
 //        poiCall.execute(Response<List<Poi>> response, Retrofit retrofit);
-//
-//        poiCall.enqueue(new Callback<List<Poi>>() {
-//            @Override
-//            public void onResponse(Response<List<Poi>> response, Retrofit retrofit) {
-//                List<Poi> pois = response.body();
-//
-//                setListAdapter(new PoiAdapter(
-//                        getActivity(),
-//                        pois));
-//                //RepoPois.getInstance().getPois(null, 10)));
-//            }
-//
-//            @Override
-//            public void onFailure(Throwable t) {
-//                t.printStackTrace();
-//                Log.e("PoiApp", t.getMessage());
-//                Toast.makeText(getContext(), "Ha ocurrido un error al llamar al servicio", Toast.LENGTH_LONG).show();
-//            }
-//        });
-
-    }
-//TODO sacar esto y la busqueda mientras se escribe?
-    private void buscarPois() {
-        EditText campoBusqueda = (EditText) this.getView().findViewById(R.id.nombreContiene);
-        String titulo = campoBusqueda.getText().toString();
-
-        Call<List<Poi>> poiCall = poiService.getPois(titulo);
 
         poiCall.enqueue(new Callback<List<Poi>>() {
             @Override
@@ -160,15 +133,42 @@ public class PoiListFragment extends ListFragment implements View.OnClickListene
                 setListAdapter(new PoiAdapter(
                         getActivity(),
                         pois));
+                //RepoPois.getInstance().getPois(null, 10)));
             }
 
             @Override
             public void onFailure(Throwable t) {
                 t.printStackTrace();
-                Log.e("PoisApp", t.getMessage());
+                Log.e("PoiApp", t.getMessage());
+                Toast.makeText(getContext(), "Ha ocurrido un error al llamar al servicio", Toast.LENGTH_LONG).show();
             }
         });
     }
+
+//TODO busqueda de pois
+//    private void buscarPois() {
+//        EditText campoBusqueda = (EditText) this.getView().findViewById(R.id.nombreContiene);
+//        String titulo = campoBusqueda.getText().toString();
+//
+//        Call<List<Poi>> poiCall = poiService.getPois(titulo);
+//
+//        poiCall.enqueue(new Callback<List<Poi>>() {
+//            @Override
+//            public void onResponse(Response<List<Poi>> response, Retrofit retrofit) {
+//                List<Poi> pois = response.body();
+//
+//                setListAdapter(new PoiAdapter(
+//                        getActivity(),
+//                        pois));
+//            }
+//
+//            @Override
+//            public void onFailure(Throwable t) {
+//                t.printStackTrace();
+//                Log.e("PoisApp", t.getMessage());
+//            }
+//        });
+//    }
 
     @Override
     public void onActivityCreated(Bundle savedInstanceState) {
@@ -184,43 +184,43 @@ public class PoiListFragment extends ListFragment implements View.OnClickListene
                 && savedInstanceState.containsKey(STATE_ACTIVATED_POSITION)) {
             setActivatedPosition(savedInstanceState.getInt(STATE_ACTIVATED_POSITION));
         }
-//TODO sacar a partir de aca?
+//TODO busqueda de pois
         // Comportamiento del checkbox que indica si se busca a medida que se escribe
-        final CheckBox chkBuscar = (CheckBox) view.findViewById(R.id.chkBuscarOnline);
-        final View myView = view;
-        chkBuscar.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                ImageButton btnBuscar = (ImageButton) myView.findViewById(R.id.btnBuscar);
-                if (chkBuscar.isChecked()) {
-                    btnBuscar.setVisibility(View.INVISIBLE);
-                } else {
-                    btnBuscar.setVisibility(View.VISIBLE);
-                }
-            }
-        });
+//        final CheckBox chkBuscar = (CheckBox) view.findViewById(R.id.chkBuscarOnline);
+//        final View myView = view;
+//        chkBuscar.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                ImageButton btnBuscar = (ImageButton) myView.findViewById(R.id.btnBuscar);
+//                if (chkBuscar.isChecked()) {
+//                    btnBuscar.setVisibility(View.INVISIBLE);
+//                } else {
+//                    btnBuscar.setVisibility(View.VISIBLE);
+//                }
+//            }
+//        });
 
         // Comportamiento del título de búsqueda
-        EditText tituloContiene = (EditText) view.findViewById(R.id.nombreContiene);
-        tituloContiene.addTextChangedListener(new TextWatcher() {
-            @Override
-            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+//        EditText tituloContiene = (EditText) view.findViewById(R.id.nombreContiene);
+//        tituloContiene.addTextChangedListener(new TextWatcher() {
+//            @Override
+//            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+//
+//            }
 
-            }
+//            @Override
+//            public void onTextChanged(CharSequence s, int start, int before, int count) {
+//            }
+//
+//            @Override
+//            public void afterTextChanged(Editable editable) {
+//                if (chkBuscar.isChecked() && editable.length() >= MIN_BUSQUEDA_POIS) {
+//                    buscarPois();
+//                }
+//            }
+//        });
 
-            @Override
-            public void onTextChanged(CharSequence s, int start, int before, int count) {
-            }
-
-            @Override
-            public void afterTextChanged(Editable editable) {
-                if (chkBuscar.isChecked() && editable.length() >= MIN_BUSQUEDA_POIS) {
-                    buscarPois();
-                }
-            }
-        });
-
-        ((ImageButton) view.findViewById(R.id.btnBuscar)).setOnClickListener(this);
+//        ((ImageButton) view.findViewById(R.id.btnBuscar)).setOnClickListener(this);
     }
 
     @Override
@@ -249,16 +249,16 @@ public class PoiListFragment extends ListFragment implements View.OnClickListene
 
         // Notify the active callbacks interface (the activity, if the
         // fragment is attached to one) that an item has been selected.
-//        Poi poi = RepositorioPois.getInstance().getPoi(id); //TODO ya no está en peliculas rest
+//        Poi poi = RepositorioPois.getInstance().getPoi(id);
 //        mCallbacks.onItemSelected(poi);
 
-        try {
+//        try {
             Poi poi = (Poi) listView.getAdapter().getItem(position);
             Toast.makeText(getContext(), poi.getNombre(), Toast.LENGTH_LONG).show();
             mCallbacks.onItemSelected(poi);
-        }catch(Exception e){
-            Toast.makeText(getContext(), "Hubo un error al ver poi", Toast.LENGTH_LONG).show();
-        }
+//        }catch(Exception e){
+//            Toast.makeText(getContext(), "Hubo un error al ver poi", Toast.LENGTH_LONG).show();
+//        }
     }
 
     @Override
@@ -296,10 +296,10 @@ public class PoiListFragment extends ListFragment implements View.OnClickListene
 
         mActivatedPosition = position;
     }
-//TODO sacar?
-    @Override
-    public void onClick(View v) {
-        buscarPois();
-    }
+//TODO busqueda de pòis
+//    @Override
+//    public void onClick(View v) {
+//        buscarPois();
+//    }
 }
 

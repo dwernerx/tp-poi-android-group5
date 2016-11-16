@@ -12,8 +12,8 @@ public interface PoisService {
 //    public Call<List<Pelicula>> getPeliculas(@Path("tituloContiene") String tituloContiene);
 
 //    @GET("pois/buscador/{nombreContiene}")
-    @GET("buscador/{nombreContiene}")
-    public Call<List<Poi>> getPois(@Path("nombreContiene") String nombreContiene);
+//    @GET("buscador/{nombreContiene}")
+//    public Call<List<Poi>> getPois(@Path("nombreContiene") String nombreContiene);
 
 //    @GET("pois/buscador")
 //    public Call<List<Poi>> getPois();
