@@ -9,17 +9,17 @@ public class Banco extends Poi {
     private String nombre;
     private List<String> servicios;
 
-    public Banco(String nombre, String direccion, String horario, boolean favorito) {
+    public Banco(String nombre, /*String*/Direccion direccion, /*String*/HorarioDeAtencion horario, boolean favorito) {
         super(direccion, horario, favorito);
         this.servicios = new ArrayList<>();
         this.nombre = nombre;
     }
 //TODO con o sin reviews?
-    public Banco(String nombre, String direccion, String horario, boolean favorito, List<Review> reviews) {
-        super(direccion, horario, favorito, reviews);
-        this.servicios = new ArrayList<>();
-        this.nombre = nombre;
-    }
+//    public Banco(String nombre, String direccion, String horario, boolean favorito, List<Review> reviews) {
+//        super(direccion, horario, favorito, reviews);
+//        this.servicios = new ArrayList<>();
+//        this.nombre = nombre;
+//    }
 
     public List getServicios(){
         return this.servicios;
@@ -44,13 +44,13 @@ public class Banco extends Poi {
         return this.getTipo()+" "+this.nombre;
     }
 
-    @Override
-    public String getDetalleParticular() {
-        return this.getServiciosToString();
-    }
-
-    @Override
-    public String getNombreDetalleParticular(){
-        return "Servicios: ";
-    }
+//    @Override
+//    public String getDetalleParticular() {
+//        return this.getServiciosToString();
+//    }
+//
+//    @Override
+//    public String getNombreDetalleParticular(){
+//        return "Servicios: ";
+//    }
 }

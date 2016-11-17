@@ -2,12 +2,17 @@
     <!--<string name="app_name">Pois-App</string>-->
     <string name="app_name">Points of Interest - Grupo 5</string>
     <string name="title_poi_detail">Detalles Poi</string>
-    <string name="poi_direccion">Dirección: </string>
-    <string name="poi_horario">Horario: </string>
-    <string name="poi_fav">Favorito</string>
+    <!--<string name="titulo">Detalles</string>-->
+    <string name="titulo">INFORMACIÓN</string>
+    <string name="direccion">Dirección: </string>
+    <string name="horario">Horario: </string>
+    <string name="favorito">Favorito</string>
     <!--<string name="poi_reviews"><u>Reviews</u></string>-->
-    <string name="poi_reviews">Reviews</string>
-    <string name="poi_calificacion">Calificación General</string>
+    <string name="reviews">REVIEWS</string>
+    <string name="servicios">Servicios: </string>
+    <string name="cant_paradas">Cantidad de paradas: </string>
+    <string name="rubro">Rubro: </string>
+    <string name="calificacion_general">Calificación General</string>
 
     <string name="buscar">Buscar</string>
     <string name="buscarInmediatamente">Buscar mientras se escribe</string>

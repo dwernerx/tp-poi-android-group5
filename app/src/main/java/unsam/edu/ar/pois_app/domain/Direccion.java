@@ -25,6 +25,7 @@ public class Direccion implements Serializable {
         return numero;
     }
 
+    @Override
     public String toString(){
         return calle + " " + numero + ", " + barrio;
     }

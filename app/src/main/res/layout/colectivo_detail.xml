@@ -1,0 +1,269 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+    <!--android:layout_weight="1"-->
+    <TextView
+        android:text="@string/titulo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:textAlignment="center"
+        style="?android:attr/textAppearanceLargeInverse"
+        android:textStyle="bold"
+        android:textSize="25dp"
+        android:textColor="#000"
+        android:padding="10dp"
+        android:background="@color/colorGrey"
+        />
+    <!--android:id="@+id/titulo"-->
+    <!--android:paddingBottom="10dp"-->
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:layout_marginBottom="10dp"
+        android:background="@android:color/darker_gray" />
+
+    <!--<LinearLayout-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:orientation="horizontal"-->
+        <!--android:layout_marginTop="6dp"-->
+        <!--&gt;-->
+
+        <!--<TextView-->
+            <!--android:layout_column="1"-->
+            <!--android:text="@string/direccion"-->
+            <!--style="?android:attr/textAppearanceMedium"-->
+            <!--android:textStyle="bold"-->
+            <!--android:textColor="@color/colorPrimaryDark"-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:padding="16dip"-->
+            <!--/>-->
+
+        <!--<TextView xmlns:android="http://schemas.android.com/apk/res/android"-->
+            <!--xmlns:tools="http://schemas.android.com/tools"-->
+            <!--android:id="@+id/banco_direccion"-->
+            <!--style="?android:attr/textAppearanceMedium"-->
+            <!--android:textColor="@color/colorPrimaryDark"-->
+            <!--android:textAppearance="@android:style/TextAppearance.DeviceDefault.Medium.Inverse"-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:padding="16dp"-->
+            <!--android:textIsSelectable="true"-->
+            <!--tools:context=".PoiDetailFragment"-->
+            <!--/>-->
+
+    <!--</LinearLayout>-->
+
+    <!--<LinearLayout-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:orientation="horizontal">-->
+
+        <!--<TextView-->
+            <!--android:layout_column="1"-->
+            <!--android:text="@string/horario"-->
+            <!--style="?android:attr/textAppearanceMedium"-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:textStyle="bold"-->
+            <!--android:textColor="@color/colorPrimaryDark"-->
+            <!--android:padding="16dip"-->
+            <!--/>-->
+
+        <!--<TextView xmlns:android="http://schemas.android.com/apk/res/android"-->
+            <!--xmlns:tools="http://schemas.android.com/tools"-->
+            <!--android:id="@+id/banco_horario"-->
+            <!--style="?android:attr/textAppearanceMedium"-->
+            <!--android:textColor="@color/colorPrimaryDark"-->
+            <!--android:textAppearance="@android:style/TextAppearance.DeviceDefault.Medium.Inverse"-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:padding="16dp"-->
+            <!--android:textIsSelectable="true"-->
+            <!--tools:context=".PoiDetailFragment"-->
+            <!--/>-->
+
+    <!--</LinearLayout>-->
+
+    <!--<LinearLayout-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:orientation="horizontal">-->
+
+        <TableLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TableRow>
+        <TextView
+            android:layout_column="1"
+            android:text="@string/cant_paradas"
+            style="?android:attr/textAppearanceMedium"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textStyle="bold"
+            android:textColor="@color/colorPrimaryDark"
+            android:padding="16dip"
+            />
+
+        <TextView xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:tools="http://schemas.android.com/tools"
+            android:id="@+id/colectivo_paradas"
+            style="?android:attr/textAppearanceMedium"
+            android:textColor="@color/colorPrimaryDark"
+            android:textAppearance="@android:style/TextAppearance.DeviceDefault.Medium.Inverse"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="16dp"
+            android:textIsSelectable="true"
+            tools:context=".PoiDetailFragment"
+            />
+            </TableRow>
+    <!--</LinearLayout>-->
+    </TableLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_marginTop="@dimen/layout_division"
+        >
+        <!--<LinearLayout-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:orientation="vertical">-->
+        <TextView
+            android:layout_column="1"
+            android:text="@string/calificacion_general"
+            style="?android:attr/textAppearanceMedium"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textStyle="bold"
+            android:textColor="@color/colorPrimaryDark"
+            android:textAlignment="center"
+            android:padding="16dip"
+            />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <RatingBar
+                android:id="@+id/poi_calificacion_general"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                style="?android:attr/ratingBarStyleIndicator"
+                android:numStars="5"
+                android:isIndicator="true"
+                android:stepSize="0.5"
+                android:layout_marginLeft="@dimen/text_margin"
+                tools:context=".PoiDetailFragment"
+                />
+            <!--android:layout_alignParentLeft="true"-->
+            <!--android:layout_alignParentTop="true"-->
+            <TextView
+                android:layout_column="1"
+                android:id="@+id/poi_promedio"
+                style="?android:attr/textAppearanceMedium"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textStyle="bold"
+                android:textColor="@color/colorPrimaryDark"
+                android:layout_marginLeft="@dimen/text_margin"
+                android:layout_marginBottom="10dp"
+                android:padding="10dip"
+                tools:context="ar.edu.unsam.poiapp.PoiDetailFragment"
+                />
+        </LinearLayout>
+
+    </LinearLayout>
+
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginLeft="0dp"
+        android:layout_marginTop="10dp">
+
+        <TextView
+            android:layout_column="1"
+            android:text="@string/favorito"
+            style="?android:attr/textAppearanceMedium"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textStyle="bold"
+            android:textColor="@color/colorPrimaryDark"
+            android:layout_marginRight="20dp"
+            android:layout_marginLeft="20dp"
+            />
+        <!--android:padding="10dip"-->
+
+        <CheckBox
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/checkbox_favorito"
+            android:theme="@style/checkBoxStyle"
+            android:clickable="false"
+            android:layout_marginBottom="5dp"
+            tools:context="ar.edu.unsam.poiapp.PoiDetailFragment"
+            />
+
+    </LinearLayout>
+
+    <!--</LinearLayout>-->
+
+    <!--<View-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="2dp"-->
+    <!--android:layout_marginTop="10dp"-->
+    <!--android:background="@android:color/darker_gray" />-->
+    <!--android:layout_marginBottom="10dp"-->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        >
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/reviews"
+            android:background="@color/colorGrey"
+            android:textSize="23dp"
+            android:textStyle="bold"
+            android:textColor="@color/colorPrimaryDark"
+            android:textAlignment="center"
+            android:layout_marginTop="10dp"
+            android:padding="15dip"
+            />
+        <!--android:textStyle="bold|italic"-->
+        <TextView
+            xmlns:tools="http://schemas.android.com/tools"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/poi_reviews"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            tools:context="ar.edu.unsam.poiapp.PoiDetailFragment"
+            />
+        <!--android:layout_width="wrap_content"-->
+        <!--android:textColor="@android:color/white"-->
+        <!--<TextView-->
+            <!--android:id="@android:id/empty"-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--&gt;-->
+        <!--</TextView>-->
+        <!--android:background="@android:color/white"-->
+    </LinearLayout>
+
+
+</LinearLayout>

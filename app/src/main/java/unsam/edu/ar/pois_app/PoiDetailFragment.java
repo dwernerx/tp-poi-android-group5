@@ -19,6 +19,7 @@ import org.w3c.dom.Text;
 
 import unsam.edu.ar.pois_app.adapter.Review2Adapter;
 import unsam.edu.ar.pois_app.adapter.ReviewAdapter;
+import unsam.edu.ar.pois_app.adapter.TipoPoiAdapter;
 import unsam.edu.ar.pois_app.domain.Poi;
 import unsam.edu.ar.pois_app.dummy.DummyContent;
 import unsam.edu.ar.pois_app.utils.StringUtils;
@@ -40,7 +41,7 @@ public class PoiDetailFragment extends Fragment {
      * The dummy content this fragment is presenting.
      */
     private Poi poi;
-
+    private View rootView;
     /**
      * Mandatory empty constructor for the fragment manager to instantiate the
      * fragment (e.g. upon screen orientation changes).
@@ -76,55 +77,42 @@ public class PoiDetailFragment extends Fragment {
         @Override
         public View onCreateView (LayoutInflater inflater, ViewGroup container,
                 Bundle savedInstanceState){
-//            View rootView = inflater.inflate(R.layout.poi_detail, container, false);
-            View rootView = inflater.inflate(R.layout.fragment_poi_detail, container, false);
-            // Show the dummy content as text in a TextView.
-            if (poi != null) {
-//                ImageView imgTipo = ((ImageView) rootView.findViewById(R.id.imgTipoPoi));
-//                imgTipo.setImageDrawable(getResources().getDrawable(new TipoPoiAdapter().getIconoTipo(poi)));
+            TipoPoiAdapter tipoAdapter = new TipoPoiAdapter();
+//            View rootView = inflater.inflate(R.layout.fragment_poi_detail, container, false);
 
-//                ((TextView) rootView.findViewById(R.id.poi_detail)).setText(poi.getNombre());
+            this.rootView = inflater.inflate(tipoAdapter.getLayoutTipo(poi), container, false);
 
-                ((TextView) rootView.findViewById(R.id.poi_horario)).setText(poi.getHorario());
-                ((TextView) rootView.findViewById(R.id.poi_direccion)).setText(poi.getDireccion());
-                ((TextView) rootView.findViewById(R.id.poi_dato_particular_nombre)).setText(poi.getNombreDetalleParticular());
-                ((TextView) rootView.findViewById(R.id.poi_dato_particular_info)).setText(poi.getDetalleParticular());
+//            if (poi != null) {
+
+//                ((TextView) rootView.findViewById(R.id.poi_horario)).setText(poi.getHorario());
+//                ((TextView) rootView.findViewById(R.id.poi_direccion)).setText(poi.getDireccion());
+//                ((TextView) rootView.findViewById(R.id.poi_dato_particular_nombre)).setText(poi.getNombreDetalleParticular());
+//                ((TextView) rootView.findViewById(R.id.poi_dato_particular_info)).setText(poi.getDetalleParticular());
+
+
+                //Informacion que muestran todos los pois
+//                ImageView imgPoi = (ImageView) rootView.findViewById(R.id.img_tipo_poi);
+//                imgPoi.setImageResource(new TipoPoiAdapter().getIconoTipo(poi));
+
+//                ((TextView) rootView.findViewById(R.id.titulo)).setText("INFORMACIÓN:"); //TODO o detalles?
+//                ((TextView) rootView.findViewById(R.id.tipo)).setText("Tipo: " + poi.getTipo() + "\n");
+
 
                 ((CheckBox) rootView.findViewById(R.id.checkbox_favorito)).setChecked(poi.isEstaEnFavoritos());
-                RatingBar ratingBar = ((RatingBar) rootView.findViewById(R.id.poi_calificacion));
-                ratingBar.setRating((float) poi.getPromedioDeCalificaciones());
-//                ratingBar.setMinimumWidth(10);
-//                ratingBar.setMinimumHeight(10);
 
-//                ((TextView) rootView.findViewById(R.id.poi_promedio)).setText(""+poi.getPromedioDeCalificaciones());
+                RatingBar ratingBar = ((RatingBar) rootView.findViewById(R.id.poi_calificacion_general));
+                ratingBar.setRating((float) poi.getCalificacion().getPromedioDeCalificaciones());
                 ((TextView) rootView.findViewById(R.id.poi_promedio)).setText(""+ratingBar.getRating()+" / "+ ratingBar.getNumStars());
 
-//                ProgressBar progressBar = (ProgressBar) rootView.findViewById(R.id.progressBar);
-//                progressBar.setProgress((int) poi.getPromedioDeCalificaciones());
+//                ((TextView) rootView.findViewById(R.id.reviews)).setText("Reviews: \n" + poi.getCalificacion().getReviewsToString());
+                ((TextView) rootView.findViewById(R.id.poi_reviews)).setText(poi.getCalificacion().getReviewsToString());
 
-//                if(poi.getReviews().isEmpty()){
-                    //TODO textview que diga algo como que no tiene reviews?
-//                } else {
-                    ((ListView) rootView.findViewById(R.id.poi_review_list)).setAdapter(new Review2Adapter(getContext(), poi.getReviews()));
-                    //TODO ultima version de prueba de la lista de reviews (en fragment_poi_detail creo que sería la opcion3)
-
-                    //TODO lo que está en opcion1 es lo que está en review_row
-//                }
-
-
-
-
-//                ProgressBar progressBar = ((ProgressBar) rootView.findViewById(R.id.poi_promedio));
-//                progressBar.setProgress(poi.getPromedioDeCalificaciones());
-//                progressBar.getIndeterminateDrawable().setColorFilter(Color.parseColor("#80DAEB"),
-//                        android.graphics.PorterDuff.Mode.MULTIPLY);
-
-//                hay que hacer un adapter para datos de cada poi?  map que devuelva 1 dato?
-//                icono tipo poi?  (adapter --> generos pelicula)
+                /** Información particular del tipo de poi**/
+                tipoAdapter.getViewDetailTipo(rootView, poi);
 
 
 //                ((TextView) rootView.findViewById(R.id.poi_reviews)).setText("Review: \n" + poi.getReviews());
-            }
+//            }
             return rootView;
         }
 

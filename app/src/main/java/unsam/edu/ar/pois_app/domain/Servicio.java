@@ -4,9 +4,9 @@ import java.io.Serializable;
 
 public class Servicio implements Serializable{
     private String nombre;
-    private String horario;
+    private /*String*/HorarioDeAtencion horario;
 
-    public Servicio(String nombre_, String horario_){
+    public Servicio(String nombre_, /*String*/HorarioDeAtencion horario_){
         this.nombre = nombre_;
         this.horario = horario_;
     }
@@ -20,15 +20,16 @@ public class Servicio implements Serializable{
     }
 
     public String getHorario(){
-        return this.horario;
+        return horario.toString();
+//        return this.horario;
     }
 
-    public void setHorario(String horario){
+    public void setHorario(/*String*/HorarioDeAtencion horario){
         this.horario = horario;
     }
 
     @Override
     public String toString(){
-        return nombre + " " + horario/* + " hs."*/;
+        return nombre + " " + horario.toString()/* + " hs."*/;
     }
 }

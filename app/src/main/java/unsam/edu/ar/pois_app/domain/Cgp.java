@@ -13,17 +13,17 @@ public class Cgp extends Poi {
     private String numeroComuna;
     private List<Servicio> servicios;
 
-    public Cgp(String direccion, String horario, boolean favorito, String numeroComuna) {
+    public Cgp(/*String*/Direccion direccion, /*String*/HorarioDeAtencion horario, boolean favorito, String numeroComuna) {
         super(direccion, horario, favorito);
         this.numeroComuna = numeroComuna;
         this.servicios = new ArrayList<>();
     }
 
-    public Cgp(String direccion, String horario, boolean favorito, String numeroComuna, List<Review> reviews) {
-        super(direccion, horario, favorito, reviews);
-        this.numeroComuna = numeroComuna;
-        this.servicios = new ArrayList<>();
-    }
+//    public Cgp(String direccion, String horario, boolean favorito, String numeroComuna, List<Review> reviews) {
+//        super(direccion, horario, favorito, reviews);
+//        this.numeroComuna = numeroComuna;
+//        this.servicios = new ArrayList<>();
+//    }
 
     @Override
     public String getNombre() {
@@ -31,15 +31,15 @@ public class Cgp extends Poi {
         return this.getTipo() + " " + numeroComuna;
     }
 
-    @Override
-    public String getDetalleParticular() {
-        return this.getServiciostoString();
-    }
-
-    @Override
-    public String getNombreDetalleParticular() {
-        return "Servicios: ";
-    }
+//    @Override
+//    public String getDetalleParticular() {
+//        return this.getServiciosToString();
+//    }
+//
+//    @Override
+//    public String getNombreDetalleParticular() {
+//        return "Servicios: ";
+//    }
 
     public String getNumeroComuna(){
         return numeroComuna;
@@ -57,7 +57,7 @@ public class Cgp extends Poi {
         return servicios;
     }
 
-    public String getServiciostoString(){
+    public String getServiciosToString(){
         List<String> serviciosStrings = new ArrayList<>();
 //        String serviciosString= "";
         for(int i=0; i<servicios.size(); i++){

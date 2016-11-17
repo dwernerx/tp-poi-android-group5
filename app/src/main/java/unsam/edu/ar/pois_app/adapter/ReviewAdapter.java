@@ -5,14 +5,12 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
-import android.widget.BaseAdapter;
 import android.widget.RatingBar;
 import android.widget.TextView;
 
 import java.util.List;
 
 import unsam.edu.ar.pois_app.R;
-import unsam.edu.ar.pois_app.domain.Poi;
 import unsam.edu.ar.pois_app.domain.Review;
 
 
@@ -42,17 +40,17 @@ public class ReviewAdapter extends ArrayAdapter<Review> {
 //            TextView comentario = (TextView) rowView.findViewById(R.id.review_comentario);
 //            comentario.setText(review.getComentario());
 //            RatingBar calificacion = (RatingBar) rowView.findViewById(R.id.review_calificacion);
-//            calificacion.setRating((float) review.getCalificacion());
+//            calificacion.setRating((float) review.getPuntuacion());
 
 //            TextView calificacion = (TextView) rowView.findViewById(R.id.calificacion_review);
-//            calificacion.setText(review.getCalificacion());
+//            calificacion.setText(review.getPuntuacion());
 
             TextView usuario = (TextView) rowView.findViewById(R.id.review_usuario);
             usuario.setText("* "+review.getUsuario());
             TextView comentario = (TextView) rowView.findViewById(R.id.review_comentario);
             comentario.setText(review.getComentario());
             RatingBar calificacion = (RatingBar) rowView.findViewById(R.id.review_calificacion);
-            calificacion.setRating((float) review.getCalificacion());
+            calificacion.setRating((float) review.getPuntuacion());
 
 //            TextView tvActores = (TextView) rowView.findViewById(R.id.lblActores);
 //            tvActores.setText(poi.getActores());

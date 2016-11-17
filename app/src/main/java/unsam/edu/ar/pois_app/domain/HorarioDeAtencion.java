@@ -13,7 +13,11 @@ public class HorarioDeAtencion  implements Serializable{
 
 //    @Override
     public String toString(){
-        return inicio + " a " + fin + " hs.";
+        if(inicio == null && fin == null){
+            return "";
+        } else {
+            return inicio + " a " + fin + " hs.";
+        }
     }
 
     public String getInicio() {

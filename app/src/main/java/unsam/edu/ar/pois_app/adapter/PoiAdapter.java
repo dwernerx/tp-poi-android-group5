@@ -37,13 +37,19 @@ public class PoiAdapter extends ArrayAdapter<Poi> {
         TextView tvPoi = (TextView) rowView.findViewById(R.id.lblPoi);
         tvPoi.setText(poi.getNombre());
 
-//        int img = tipoPoiAdapter.getIconoTipoPoi(poi);
-        ImageView imgTipo = ((ImageView) rowView.findViewById(R.id.img_tipo_poi));
-//        imgTipo.setImageDrawable(getDrawable(tipoPoiAdapter.getIconoTipoPoi(poi)));
-        imgTipo.setImageDrawable(getContext().getResources().getDrawable(new TipoPoiAdapter().getIconoTipoPoi(poi)));
+//        TextView tvTipo = (TextView) rowView.findViewById(R.id.lblTipo);
+//        tvTipo.setText(poi.getTipo());  //TODO si usamos esto en getNombre() no tendria el tipo
 
-//            TextView tvActores = (TextView) rowView.findViewById(R.id.lblActores);
-//            tvActores.setText(poi.getActores());
+//        int img = tipoPoiAdapter.getIconoTipoPoi(poi);
+
+//        ImageView imgTipo = ((ImageView) rowView.findViewById(R.id.img_tipo_poi));
+//        imgTipo.setImageDrawable(getContext().getResources().getDrawable(new TipoPoiAdapter().getIconoTipo(poi)));
+
+        //        imgTipo.setImageDrawable(getDrawable(tipoPoiAdapter.getIconoTipoPoi(poi)));
+
+        ImageView imgPoi = (ImageView) rowView.findViewById(R.id.img_tipo_poi);
+        imgPoi.setImageResource(new TipoPoiAdapter().getIconoTipo(poi));
+
         return rowView;
     }
 }

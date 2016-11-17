@@ -5,7 +5,6 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
-import android.widget.BaseAdapter;
 import android.widget.RatingBar;
 import android.widget.TextView;
 
@@ -76,7 +75,7 @@ public class Review2Adapter extends /*BaseAdapter*/ ArrayAdapter<Review> {
         TextView comentario = (TextView) rowView.findViewById(R.id.review_comentario);
         comentario.setText(review.getComentario());
         RatingBar calificacion = (RatingBar) rowView.findViewById(R.id.review_calificacion);
-        calificacion.setRating((float) review.getCalificacion());
+        calificacion.setRating((float) review.getPuntuacion());
 
         return rowView;
     }

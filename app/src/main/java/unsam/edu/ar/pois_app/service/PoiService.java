@@ -7,7 +7,7 @@ import retrofit.http.GET;
 import retrofit.http.Path;
 import unsam.edu.ar.pois_app.domain.Poi;
 
-public interface PoisService {
+public interface PoiService {
 //    @GET("peliculas/{tituloContiene}")
 //    public Call<List<Pelicula>> getPeliculas(@Path("tituloContiene") String tituloContiene);
 
