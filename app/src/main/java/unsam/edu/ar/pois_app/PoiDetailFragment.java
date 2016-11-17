@@ -101,11 +101,13 @@ public class PoiDetailFragment extends Fragment {
                 ((CheckBox) rootView.findViewById(R.id.checkbox_favorito)).setChecked(poi.isEstaEnFavoritos());
 
                 RatingBar ratingBar = ((RatingBar) rootView.findViewById(R.id.poi_calificacion_general));
-                ratingBar.setRating((float) poi.getCalificacion().getPromedioDeCalificaciones());
+//                ratingBar.setRating((float) poi.getCalificacion().getPromedioDeCalificaciones());
+            ratingBar.setRating((float) poi.getCalificacion());
                 ((TextView) rootView.findViewById(R.id.poi_promedio)).setText(""+ratingBar.getRating()+" / "+ ratingBar.getNumStars());
 
 //                ((TextView) rootView.findViewById(R.id.reviews)).setText("Reviews: \n" + poi.getCalificacion().getReviewsToString());
-                ((TextView) rootView.findViewById(R.id.poi_reviews)).setText(poi.getCalificacion().getReviewsToString());
+//                ((TextView) rootView.findViewById(R.id.poi_reviews)).setText(poi.getCalificacion().getReviewsToString());
+            ((TextView) rootView.findViewById(R.id.poi_reviews)).setText(poi.getReviews());
 
                 /** Información particular del tipo de poi**/
                 tipoAdapter.getViewDetailTipo(rootView, poi);

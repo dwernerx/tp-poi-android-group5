@@ -5,6 +5,7 @@ import java.util.List;
 import retrofit.Call;
 import retrofit.http.GET;
 import retrofit.http.Path;
+import unsam.edu.ar.pois_app.domain.Detalle;
 import unsam.edu.ar.pois_app.domain.Poi;
 
 public interface PoiService {
@@ -18,6 +19,12 @@ public interface PoiService {
 //    @GET("pois/buscador")
 //    public Call<List<Poi>> getPois();
 
-    @GET("buscador")
-    public Call<List<Poi>> getPois();
+    //    @GET("buscador")
+//    public Call<List<Poi>> getPois();
+    @GET("/buscador")
+    Call<List<Poi>> getPois();
+    //public?
+
+    @GET("/detallesPoi/ID=:{id}")
+    public Call<List<Detalle>> getDetalle(@Path("id") String id);
 }

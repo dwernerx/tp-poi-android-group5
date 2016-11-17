@@ -23,8 +23,8 @@ public class ReviewAdapter extends ArrayAdapter<Review> {
 
         @Override
         public long getItemId(int position) {
-            //return position;
-            return getItem(position).getId();
+            return position;
+//            return getItem(position).getId();
         }
 
         @Override
@@ -36,7 +36,7 @@ public class ReviewAdapter extends ArrayAdapter<Review> {
             final Review review = getItem(position);
 
 //            TextView usuario = (TextView) rowView.findViewById(R.id.review_usuario);
-//            usuario.setText(review.getUsuario());
+//            usuario.setText(review.getNombreDeUsuario());
 //            TextView comentario = (TextView) rowView.findViewById(R.id.review_comentario);
 //            comentario.setText(review.getComentario());
 //            RatingBar calificacion = (RatingBar) rowView.findViewById(R.id.review_calificacion);
@@ -46,7 +46,7 @@ public class ReviewAdapter extends ArrayAdapter<Review> {
 //            calificacion.setText(review.getPuntuacion());
 
             TextView usuario = (TextView) rowView.findViewById(R.id.review_usuario);
-            usuario.setText("* "+review.getUsuario());
+            usuario.setText("* "+review.getNombreDeUsuario());
             TextView comentario = (TextView) rowView.findViewById(R.id.review_comentario);
             comentario.setText(review.getComentario());
             RatingBar calificacion = (RatingBar) rowView.findViewById(R.id.review_calificacion);

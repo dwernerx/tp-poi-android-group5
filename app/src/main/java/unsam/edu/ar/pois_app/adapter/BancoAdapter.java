@@ -16,9 +16,10 @@ public class BancoAdapter extends DetailAdapter {
         ((TextView) rootView.findViewById(R.id.banco_horario)).setText(poi.getHorario());
 
 //        ((TextView) rootView.findViewById(R.id.banco_servicios)).setText("Servicios: " + poi.getServiciosToString());
-        Banco banco = (Banco) poi;
+//        Banco banco = (Banco) poi;
 //        ((TextView) rootView.findViewById(R.id.banco_servicios)).setText("Servicios: " + banco.getServiciosToString());
-        ((TextView) rootView.findViewById(R.id.banco_servicios)).setText(banco.getServiciosToString());
+//        ((TextView) rootView.findViewById(R.id.banco_servicios)).setText(banco.getServiciosToString());
+        ((TextView) rootView.findViewById(R.id.banco_servicios)).setText(poi.getServicios());
         //TODO o hacemos metodos abstractos y cada poi devuelven los servicios o "No se encontraron servicios" o usamos solo Poi ??
 
         return rootView;

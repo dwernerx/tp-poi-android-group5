@@ -20,9 +20,10 @@ public class LocalComercialAdapter extends DetailAdapter{
 
 //        ((TextView) rootView.findViewById(R.id.banco_servicios)).setText("Servicios: " + poi.getServiciosToString());
 
-        LocalComercial localComercial = (LocalComercial) poi;
+//        LocalComercial localComercial = (LocalComercial) poi;
 //        ((TextView) rootView.findViewById(R.id.local_comercial_rubro)).setText("Rubro: " + localComercial.getRubro());
-        ((TextView) rootView.findViewById(R.id.local_comercial_rubro)).setText(localComercial.getRubro());
+//        ((TextView) rootView.findViewById(R.id.local_comercial_rubro)).setText(localComercial.getRubro());
+        ((TextView) rootView.findViewById(R.id.local_comercial_rubro)).setText(poi.getRubro());
 
         return rootView;
     }

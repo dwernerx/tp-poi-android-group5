@@ -7,39 +7,44 @@ import java.util.List;
 import unsam.edu.ar.pois_app.utils.NumberUtils;
 
 public class Calificacion implements Serializable {
-    private List<Review> listaDeReviews;
+    private List<Review> listaReview;
+    public String promedioCalificacion;
+//    public int promedioCalificacion;
 
     public Calificacion(){
-        this.listaDeReviews = new ArrayList<>();
+        this.listaReview = new ArrayList<>();
     }
 
-    public void agregarReview(Review review) {
-        this.listaDeReviews.add(review);
-    }
-
-    public void eliminarReview(Review review) {
-        this.listaDeReviews.remove(review);
-    }
-
-    /** depende de como queremos agregar los listaDeReviews*/
-    public void agregarReviews(List<Review> reviews) {
-        this.listaDeReviews.addAll(reviews);
-    }
-
+//    public void agregarReview(Review review) {
+//        this.listaReview.add(review);
+//    }
+//
+//    public void eliminarReview(Review review) {
+//        this.listaReview.remove(review);
+//    }
+//
+//    /** depende de como queremos agregar los listaReview*/
+//    public void agregarReviews(List<Review> reviews) {
+//        this.listaReview.addAll(reviews);
+//    }
+//
     public List getReviews(){
-        return listaDeReviews;
+        return listaReview;
     }
 
     public String getReviewsToString() {
         String reviews="";
         if(this.noHayReviews()) {
-//            mensajes = "No hay listaDeReviews por el momento.";
-            reviews = "No hay listaDeReviews.";
+            reviews = "No hay review.";
         }
-        for (Review review : listaDeReviews) {
-            reviews = reviews + review.toString();//"\n Usuario: " + item.getUsuario() + "\n Comentario: " + item.getComentario() + "\n Puntuacion: " + item.getPuntuacion() + "\n";
+        for (Review review : listaReview) {
+            reviews = reviews + review.toString();//"\n Usuario: " + item.getNombreDeUsuario() + "\n Comentario: " + item.getComentario() + "\n Puntuacion: " + item.getPuntuacion() + "\n";
         }
         return reviews;
+    }
+
+        public String getPromedioCalificacion() {
+        return promedioCalificacion;
     }
 
     public double /*int*/ getPromedioDeCalificaciones() {
@@ -53,18 +58,18 @@ public class Calificacion implements Serializable {
     }
 
     private int getCantidadDeReviews(){
-        return this.listaDeReviews.size();
+        return this.listaReview.size();
     }
 
     private int getSumaDeCalificaciones() {
         int sumaCalificaciones = 0;
         for (int i = 0; i < this.getCantidadDeReviews(); i++) {
-            sumaCalificaciones = sumaCalificaciones + this.listaDeReviews.get(i).getPuntuacion();
+            sumaCalificaciones = sumaCalificaciones + this.listaReview.get(i).getPuntuacion();
         }
         return sumaCalificaciones;
     }
 
     private boolean noHayReviews(){
-        return this.listaDeReviews.isEmpty();
+        return this.listaReview.isEmpty();
     }
 }

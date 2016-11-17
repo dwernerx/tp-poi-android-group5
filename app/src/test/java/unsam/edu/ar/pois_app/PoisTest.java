@@ -72,7 +72,7 @@ public class PoisTest {
     public void splitString(){
         String string = "Hola, como estás?";
 //        System.out.println(StringUtils.splitUsingTokenizer(",", string));
-        System.out.println(StringUtils.splitUsingTokenizer(",",cgp.getDireccion()));
+//        System.out.println(StringUtils.splitUsingTokenizer(",",cgp.getDireccion()));
 //        return StringUtils.splitUsingTokenizer("', '",direccion);
     }
 
