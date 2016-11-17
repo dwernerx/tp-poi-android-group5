@@ -10,74 +10,6 @@ import unsam.edu.ar.pois_app.utils.NumberUtils;
 import unsam.edu.ar.pois_app.utils.StringUtils;
 
 
-//abstract public class Poi implements Serializable {
-//    private Long id;
-//    private /*String*/ Direccion direccion;
-//    private /*String*/ HorarioDeAtencion horario;
-//    private boolean estaEnFavoritos;// = false;
-//    private Calificacion calificacion;
-//
-//    public Poi(/*String*/ Direccion direccion, /*String*/HorarioDeAtencion horario, boolean favorito) {
-//        this.direccion = direccion;
-//        this.horario = horario;
-//        this.estaEnFavoritos = favorito;
-//        this.calificacion = new Calificacion();
-//    }
-//
-//    public Long getId() {
-//        return id;
-//    }
-//
-//    public void setId(Long id) {
-//        this.id = id;
-//    }
-//
-//
-//    public boolean isEstaEnFavoritos() {
-//        return estaEnFavoritos;
-//    }
-//
-//    public void setEstaEnFavoritos(boolean estado) {
-//        this.estaEnFavoritos = estado;
-//    }
-//
-//
-//    public String getTipo() {
-//        return this.getClass().getSimpleName();
-//    }
-//
-//
-//    abstract public String getNombre();
-//
-//    public String getDireccion() {
-//        return direccion.toString();
-////        return direccion;
-//    }
-//
-//    public void setDireccion(Direccion direccion) {
-//        this.direccion = direccion;
-//    }
-//
-////    public String toString() {
-//////        return nombre;
-////        return this.getTipo() + " " + nombre;
-////    }
-//
-//    public String getHorario() {
-//        return horario.toString();
-////        return horario + " hs.";
-//    }
-//
-//    public void setHorario(HorarioDeAtencion horario) {
-//        this.horario = horario;
-//    }
-//
-//    public Calificacion getCalificacion(){
-//        return calificacion;
-//    }
-//
-//}
-
 public class Poi implements Serializable {
 
     Long id;
@@ -85,11 +17,11 @@ public class Poi implements Serializable {
     String direccion;
     String tipo;
     Calificacion calificacion;
-    HorarioDeAtencion horario; //o renombrar la clase a Horario
+    HorarioDeAtencion horario;
     Rubro rubro;
     List<Punto> recorrido;
-//    List<String> servicios = new ArrayList<>(); //TODO habría que en xtend banco y cgp tengan una lista de strings de servicios
-                                                //TODO en cgp el string tendría servicios y horario
+    List<String> listaServicios = new ArrayList<>();
+
     boolean estaEnFavoritos = true;
 
     public Poi(String nombre, String direccion) {
@@ -118,14 +50,6 @@ public class Poi implements Serializable {
         return String.valueOf(recorrido.size());
     }
 
-//    public String getHorarioInicio() {
-//        return horario.getInicio();
-//    }
-
-//    public String getHorarioFin() {
-//        return horario.getFin();
-//    }
-
     public String getHorario(){
         return horario.toString();
     }
@@ -143,7 +67,7 @@ public class Poi implements Serializable {
     }
 
     public String getNombre() {
-        return /*tipo + " " +*/ nombre;
+        return nombre;
     }
 
     public String getDireccion() {
@@ -154,11 +78,11 @@ public class Poi implements Serializable {
     }
 
     public String getServicios(){
-//        if(servicios.isEmpty()) {
+        if(listaServicios.isEmpty()) {
             return "No se encontraron servicios.";
-//        } else {
-//            return StringUtils.join("\n",this.servicios);
-//        }
+        } else {
+            return StringUtils.join("\n",this.listaServicios);
+        }
     }
 
     public String getTipo() {
@@ -186,13 +110,9 @@ public class Poi implements Serializable {
         this.rubro = rubro;
     }
 
-//    public void setHorario(HorarioDeAtencion horario) {
-//        this.horario = horario;
-//    }
-
-
-    public String toString() {
-        return nombre;
+    public void setHorario(HorarioDeAtencion horario) {
+        this.horario = horario;
     }
+
 }
 

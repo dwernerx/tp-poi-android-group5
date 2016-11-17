@@ -32,6 +32,7 @@
             android:text="@+id/label"
             android:textSize="20px"
             android:padding="26px"
+            android:layout_gravity="center"
             android:textAppearance="@android:style/TextAppearance.DeviceDefault.Large.Inverse"
             >
         </TextView>

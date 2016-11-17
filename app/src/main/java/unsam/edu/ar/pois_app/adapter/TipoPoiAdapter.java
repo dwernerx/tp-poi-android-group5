@@ -47,8 +47,7 @@ public class TipoPoiAdapter {
     public int getLayoutTipo(Poi poi) {
         Integer result = getMapaTipoLayout().get(poi.getTipo());
 //        if (result == null) {
-//            return R.layout.colectivo_detail;
-//        } //TODO
+//        }
         return result.intValue();
     }
 
@@ -67,9 +66,6 @@ public class TipoPoiAdapter {
     public void getViewDetailTipo(View rootView, Poi poi) {
 
         DetailAdapter adapterView = getMapaTipoView(rootView, poi).get(poi.getTipo());
-
-        /** se creo una clase abstract DetalleAdapter de la cual los demas adapter extienden y se puede crear ese objeto. Aparentemente fue necesario tambien
-         porque java perdia la referencia del objeto poi. ;) CJuhal  **/
 
         adapterView.getView(rootView,poi);
     }

@@ -23,7 +23,6 @@ public class Calificacion implements Serializable {
 //        this.listaReview.remove(review);
 //    }
 //
-//    /** depende de como queremos agregar los listaReview*/
 //    public void agregarReviews(List<Review> reviews) {
 //        this.listaReview.addAll(reviews);
 //    }
@@ -35,10 +34,10 @@ public class Calificacion implements Serializable {
     public String getReviewsToString() {
         String reviews="";
         if(this.noHayReviews()) {
-            reviews = "No hay review.";
+            reviews = "\n\t No hay reviews. \n";
         }
         for (Review review : listaReview) {
-            reviews = reviews + review.toString();//"\n Usuario: " + item.getNombreDeUsuario() + "\n Comentario: " + item.getComentario() + "\n Puntuacion: " + item.getPuntuacion() + "\n";
+            reviews = reviews + review.toString();//"\n Usuario: " + review.getNombreDeUsuario() + "\n Comentario: " + review.getComentario() + "\n Puntuacion: " + review.getPuntuacion() + "\n";
         }
         return reviews;
     }

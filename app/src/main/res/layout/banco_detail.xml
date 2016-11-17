@@ -34,7 +34,6 @@
         >
 
         <TextView
-            android:layout_column="1"
             android:text="@string/direccion"
             style="?android:attr/textAppearanceMedium"
             android:textStyle="bold"
@@ -65,7 +64,6 @@
         android:orientation="horizontal">
 
         <TextView
-            android:layout_column="1"
             android:text="@string/horario"
             style="?android:attr/textAppearanceMedium"
             android:layout_width="wrap_content"
@@ -96,7 +94,6 @@
         android:orientation="horizontal">
 
         <TextView
-            android:layout_column="1"
             android:text="@string/servicios"
             style="?android:attr/textAppearanceMedium"
             android:layout_width="wrap_content"
@@ -127,12 +124,8 @@
         android:orientation="vertical"
         android:layout_marginTop="@dimen/layout_division"
         >
-        <!--<LinearLayout-->
-        <!--android:layout_width="wrap_content"-->
-        <!--android:layout_height="wrap_content"-->
-        <!--android:orientation="vertical">-->
+
         <TextView
-            android:layout_column="1"
             android:text="@string/calificacion_general"
             style="?android:attr/textAppearanceMedium"
             android:layout_width="wrap_content"
@@ -162,7 +155,6 @@
             <!--android:layout_alignParentLeft="true"-->
             <!--android:layout_alignParentTop="true"-->
             <TextView
-                android:layout_column="1"
                 android:id="@+id/poi_promedio"
                 style="?android:attr/textAppearanceMedium"
                 android:layout_width="wrap_content"
@@ -188,7 +180,6 @@
         android:layout_marginTop="10dp">
 
         <TextView
-            android:layout_column="1"
             android:text="@string/favorito"
             style="?android:attr/textAppearanceMedium"
             android:layout_width="wrap_content"
@@ -206,13 +197,13 @@
             android:id="@+id/checkbox_favorito"
             android:theme="@style/checkBoxStyle"
             android:clickable="false"
+            android:visibility="visible"
+
             android:layout_marginBottom="5dp"
             tools:context="ar.edu.unsam.poiapp.PoiDetailFragment"
             />
 
     </LinearLayout>
-
-    <!--</LinearLayout>-->
 
     <!--<View-->
         <!--android:layout_width="match_parent"-->
@@ -234,7 +225,9 @@
             android:textSize="23dp"
             android:textStyle="bold"
             android:textColor="@color/colorPrimaryDark"
+            android:gravity="center"
             android:textAlignment="center"
+            style="?android:attr/textAppearanceLargeInverse"
             android:layout_marginTop="10dp"
             android:padding="15dip"
             />
@@ -245,6 +238,7 @@
             android:layout_height="wrap_content"
             android:id="@+id/poi_reviews"
             android:textAppearance="?android:attr/textAppearanceMedium"
+            android:textColor="@color/colorPrimaryDark"
             tools:context="ar.edu.unsam.poiapp.PoiDetailFragment"
             />
         <!--android:layout_width="wrap_content"-->
@@ -258,120 +252,3 @@
     </LinearLayout>
 
 </LinearLayout>
-
-    <!--<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"-->
-    <!--android:layout_width="match_parent"-->
-    <!--android:layout_height="wrap_content"-->
-    <!--android:orientation="vertical"-->
-    <!--&gt;-->
-
-    <!--<LinearLayout-->
-        <!--android:layout_width="match_parent"-->
-        <!--android:layout_height="match_parent"-->
-        <!--android:orientation="horizontal"-->
-        <!--&gt;-->
-
-        <!--<LinearLayout-->
-            <!--android:layout_width="wrap_content"-->
-            <!--android:layout_height="wrap_content"-->
-            <!--android:orientation="vertical">-->
-
-            <!--&lt;!&ndash;<ImageView&ndash;&gt;-->
-                <!--&lt;!&ndash;android:id="@+id/imgPoi"&ndash;&gt;-->
-                <!--&lt;!&ndash;android:layout_width="wrap_content"&ndash;&gt;-->
-                <!--&lt;!&ndash;android:layout_height="200dp"&ndash;&gt;-->
-                <!--&lt;!&ndash;android:layout_alignParentLeft="true"&ndash;&gt;-->
-                <!--&lt;!&ndash;android:layout_marginBottom="20dp"/>&ndash;&gt;-->
-
-            <!--&lt;!&ndash;<View&ndash;&gt;-->
-                <!--&lt;!&ndash;android:layout_width="match_parent"&ndash;&gt;-->
-                <!--&lt;!&ndash;android:layout_height="2dp"&ndash;&gt;-->
-                <!--&lt;!&ndash;android:layout_marginBottom="10dp"&ndash;&gt;-->
-                <!--&lt;!&ndash;android:background="@android:color/darker_gray" />&ndash;&gt;-->
-
-            <!--<TextView-->
-                <!--android:id="@+id/titulo"-->
-                <!--android:layout_width="match_parent"-->
-                <!--android:layout_height="wrap_content"-->
-                <!--android:gravity="center"-->
-                <!--android:textAlignment="center"-->
-                <!--android:textSize="30dp"-->
-                <!--android:textColor="#fff"-->
-                <!--android:paddingBottom="10dp"-->
-                <!--/>-->
-
-            <!--<View-->
-                <!--android:layout_width="match_parent"-->
-                <!--android:layout_height="2dp"-->
-                <!--android:layout_marginBottom="10dp"-->
-                <!--android:background="@android:color/darker_gray" />-->
-
-            <!--<TextView-->
-                <!--xmlns:tools="http://schemas.android.com/tools"-->
-                <!--android:id="@+id/tipo"-->
-                <!--android:layout_width="wrap_content"-->
-                <!--android:layout_height="match_parent"-->
-                <!--android:textAppearance="@android:style/TextAppearance.DeviceDefault.Large.Inverse"-->
-                <!--tools:context="ar.edu.unsam.poiapp.PoiDetailFragment"/>-->
-
-            <!--<TextView-->
-                <!--xmlns:tools="http://schemas.android.com/tools"-->
-                <!--android:id="@+id/banco_direccion"-->
-                <!--android:layout_width="wrap_content"-->
-                <!--android:layout_height="match_parent"-->
-                <!--android:textAppearance="@android:style/TextAppearance.DeviceDefault.Large.Inverse"-->
-                <!--tools:context="ar.edu.unsam.poiapp.PoiDetailFragment"/>-->
-
-            <!--<TextView-->
-                <!--xmlns:tools="http://schemas.android.com/tools"-->
-                <!--android:id="@+id/banco_horario"-->
-                <!--android:layout_width="wrap_content"-->
-                <!--android:layout_height="wrap_content"-->
-                <!--android:textColor="@android:color/white"-->
-                <!--android:textAppearance="?android:attr/textAppearanceMedium"-->
-                <!--tools:context="ar.edu.unsam.poiapp.PoiDetailFragment"/>-->
-
-            <!--<View-->
-                <!--android:layout_width="match_parent"-->
-                <!--android:layout_height="2dp"-->
-                <!--android:layout_marginBottom="10dp"-->
-                <!--android:background="@android:color/darker_gray" />-->
-
-            <!--<TextView-->
-                <!--xmlns:tools="http://schemas.android.com/tools"-->
-                <!--android:id="@+id/poi_calificacion_general"-->
-                <!--android:layout_width="wrap_content"-->
-                <!--android:layout_height="wrap_content"-->
-                <!--android:textColor="@android:color/white"-->
-                <!--android:paddingBottom="10dp"-->
-                <!--android:textAppearance="?android:attr/textAppearanceMedium"-->
-                <!--tools:context="ar.edu.unsam.poiapp.PoiDetailFragment"/>-->
-
-            <!--<View-->
-                <!--android:layout_width="match_parent"-->
-                <!--android:layout_height="2dp"-->
-                <!--android:layout_marginBottom="10dp"-->
-                <!--android:background="@android:color/darker_gray" />-->
-
-            <!--<TextView-->
-                <!--xmlns:tools="http://schemas.android.com/tools"-->
-                <!--android:id="@+id/poi_reviews"-->
-                <!--android:layout_width="wrap_content"-->
-                <!--android:layout_height="wrap_content"-->
-                <!--android:textColor="@android:color/white"-->
-                <!--android:textAppearance="?android:attr/textAppearanceMedium"-->
-                <!--tools:context="ar.edu.unsam.poiapp.PoiDetailFragment"/>-->
-
-            <!--<TextView-->
-                <!--xmlns:tools="http://schemas.android.com/tools"-->
-                <!--android:id="@+id/banco_servicios"-->
-                <!--android:layout_width="wrap_content"-->
-                <!--android:layout_height="wrap_content"-->
-                <!--android:textColor="@android:color/white"-->
-                <!--android:textAppearance="?android:attr/textAppearanceSmall"-->
-                <!--tools:context="ar.edu.unsam.poiapp.PoiDetailFragment"/>-->
-
-        <!--</LinearLayout>-->
-
-    <!--</LinearLayout>-->
-<!--</LinearLayout>-->

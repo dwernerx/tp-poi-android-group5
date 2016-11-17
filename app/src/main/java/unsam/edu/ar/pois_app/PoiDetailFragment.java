@@ -1,7 +1,6 @@
 package unsam.edu.ar.pois_app;
 
 import android.app.Activity;
-import android.graphics.Color;
 import android.support.design.widget.CollapsingToolbarLayout;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -9,20 +8,11 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.CheckBox;
-import android.widget.ImageView;
-import android.widget.ListView;
-import android.widget.ProgressBar;
 import android.widget.RatingBar;
 import android.widget.TextView;
 
-import org.w3c.dom.Text;
-
-import unsam.edu.ar.pois_app.adapter.Review2Adapter;
-import unsam.edu.ar.pois_app.adapter.ReviewAdapter;
 import unsam.edu.ar.pois_app.adapter.TipoPoiAdapter;
 import unsam.edu.ar.pois_app.domain.Poi;
-import unsam.edu.ar.pois_app.dummy.DummyContent;
-import unsam.edu.ar.pois_app.utils.StringUtils;
 
 /**
  * A fragment representing a single Poi detail screen.
@@ -82,14 +72,6 @@ public class PoiDetailFragment extends Fragment {
 
             this.rootView = inflater.inflate(tipoAdapter.getLayoutTipo(poi), container, false);
 
-//            if (poi != null) {
-
-//                ((TextView) rootView.findViewById(R.id.poi_horario)).setText(poi.getHorario());
-//                ((TextView) rootView.findViewById(R.id.poi_direccion)).setText(poi.getDireccion());
-//                ((TextView) rootView.findViewById(R.id.poi_dato_particular_nombre)).setText(poi.getNombreDetalleParticular());
-//                ((TextView) rootView.findViewById(R.id.poi_dato_particular_info)).setText(poi.getDetalleParticular());
-
-
                 //Informacion que muestran todos los pois
 //                ImageView imgPoi = (ImageView) rootView.findViewById(R.id.img_tipo_poi);
 //                imgPoi.setImageResource(new TipoPoiAdapter().getIconoTipo(poi));
@@ -97,24 +79,17 @@ public class PoiDetailFragment extends Fragment {
 //                ((TextView) rootView.findViewById(R.id.titulo)).setText("INFORMACIÓN:"); //TODO o detalles?
 //                ((TextView) rootView.findViewById(R.id.tipo)).setText("Tipo: " + poi.getTipo() + "\n");
 
-
                 ((CheckBox) rootView.findViewById(R.id.checkbox_favorito)).setChecked(poi.isEstaEnFavoritos());
 
                 RatingBar ratingBar = ((RatingBar) rootView.findViewById(R.id.poi_calificacion_general));
-//                ratingBar.setRating((float) poi.getCalificacion().getPromedioDeCalificaciones());
-            ratingBar.setRating((float) poi.getCalificacion());
+                ratingBar.setRating((float) poi.getCalificacion());
                 ((TextView) rootView.findViewById(R.id.poi_promedio)).setText(""+ratingBar.getRating()+" / "+ ratingBar.getNumStars());
 
-//                ((TextView) rootView.findViewById(R.id.reviews)).setText("Reviews: \n" + poi.getCalificacion().getReviewsToString());
-//                ((TextView) rootView.findViewById(R.id.poi_reviews)).setText(poi.getCalificacion().getReviewsToString());
-            ((TextView) rootView.findViewById(R.id.poi_reviews)).setText(poi.getReviews());
+                ((TextView) rootView.findViewById(R.id.poi_reviews)).setText(poi.getReviews());
 
                 /** Información particular del tipo de poi**/
                 tipoAdapter.getViewDetailTipo(rootView, poi);
 
-
-//                ((TextView) rootView.findViewById(R.id.poi_reviews)).setText("Review: \n" + poi.getReviews());
-//            }
             return rootView;
         }
 

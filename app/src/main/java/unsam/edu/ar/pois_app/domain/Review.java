@@ -36,7 +36,8 @@ public class Review implements Serializable {
 //        return "\t" + nombreDeUsuario + "\n\t\t" + comentario /*+ " " + puntuacion*/; //TODO ver como lo queremos mostrar (prueba)
 //        return nombreDeUsuario + " " + comentario + " " + puntuacion;
 
-        return "\n Usuario: " + nombreDeUsuario + "\n Comentario: " + comentario + "\n Puntuacion: " + puntuacion + "\n";
+//        return "\n Usuario: " + nombreDeUsuario + "\n Comentario: " + comentario + "\n Puntuacion: " + puntuacion + "\n";
+        return "\n Usuario: " + nombreDeUsuario + "\n Puntuacion: " + puntuacion + "\n Comentario: " + comentario  + "\n";
     }
 
 

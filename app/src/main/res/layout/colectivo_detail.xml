@@ -27,82 +27,13 @@
         android:layout_marginBottom="10dp"
         android:background="@android:color/darker_gray" />
 
-    <!--<LinearLayout-->
-        <!--android:layout_width="match_parent"-->
-        <!--android:layout_height="wrap_content"-->
-        <!--android:orientation="horizontal"-->
-        <!--android:layout_marginTop="6dp"-->
-        <!--&gt;-->
 
-        <!--<TextView-->
-            <!--android:layout_column="1"-->
-            <!--android:text="@string/direccion"-->
-            <!--style="?android:attr/textAppearanceMedium"-->
-            <!--android:textStyle="bold"-->
-            <!--android:textColor="@color/colorPrimaryDark"-->
-            <!--android:layout_width="wrap_content"-->
-            <!--android:layout_height="wrap_content"-->
-            <!--android:padding="16dip"-->
-            <!--/>-->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
 
-        <!--<TextView xmlns:android="http://schemas.android.com/apk/res/android"-->
-            <!--xmlns:tools="http://schemas.android.com/tools"-->
-            <!--android:id="@+id/banco_direccion"-->
-            <!--style="?android:attr/textAppearanceMedium"-->
-            <!--android:textColor="@color/colorPrimaryDark"-->
-            <!--android:textAppearance="@android:style/TextAppearance.DeviceDefault.Medium.Inverse"-->
-            <!--android:layout_width="wrap_content"-->
-            <!--android:layout_height="wrap_content"-->
-            <!--android:padding="16dp"-->
-            <!--android:textIsSelectable="true"-->
-            <!--tools:context=".PoiDetailFragment"-->
-            <!--/>-->
-
-    <!--</LinearLayout>-->
-
-    <!--<LinearLayout-->
-        <!--android:layout_width="match_parent"-->
-        <!--android:layout_height="wrap_content"-->
-        <!--android:orientation="horizontal">-->
-
-        <!--<TextView-->
-            <!--android:layout_column="1"-->
-            <!--android:text="@string/horario"-->
-            <!--style="?android:attr/textAppearanceMedium"-->
-            <!--android:layout_width="wrap_content"-->
-            <!--android:layout_height="wrap_content"-->
-            <!--android:textStyle="bold"-->
-            <!--android:textColor="@color/colorPrimaryDark"-->
-            <!--android:padding="16dip"-->
-            <!--/>-->
-
-        <!--<TextView xmlns:android="http://schemas.android.com/apk/res/android"-->
-            <!--xmlns:tools="http://schemas.android.com/tools"-->
-            <!--android:id="@+id/banco_horario"-->
-            <!--style="?android:attr/textAppearanceMedium"-->
-            <!--android:textColor="@color/colorPrimaryDark"-->
-            <!--android:textAppearance="@android:style/TextAppearance.DeviceDefault.Medium.Inverse"-->
-            <!--android:layout_width="wrap_content"-->
-            <!--android:layout_height="wrap_content"-->
-            <!--android:padding="16dp"-->
-            <!--android:textIsSelectable="true"-->
-            <!--tools:context=".PoiDetailFragment"-->
-            <!--/>-->
-
-    <!--</LinearLayout>-->
-
-    <!--<LinearLayout-->
-        <!--android:layout_width="match_parent"-->
-        <!--android:layout_height="wrap_content"-->
-        <!--android:orientation="horizontal">-->
-
-        <TableLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-
-            <TableRow>
         <TextView
-            android:layout_column="1"
             android:text="@string/cant_paradas"
             style="?android:attr/textAppearanceMedium"
             android:layout_width="wrap_content"
@@ -124,9 +55,7 @@
             android:textIsSelectable="true"
             tools:context=".PoiDetailFragment"
             />
-            </TableRow>
-    <!--</LinearLayout>-->
-    </TableLayout>
+    </LinearLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -134,12 +63,8 @@
         android:orientation="vertical"
         android:layout_marginTop="@dimen/layout_division"
         >
-        <!--<LinearLayout-->
-        <!--android:layout_width="wrap_content"-->
-        <!--android:layout_height="wrap_content"-->
-        <!--android:orientation="vertical">-->
+
         <TextView
-            android:layout_column="1"
             android:text="@string/calificacion_general"
             style="?android:attr/textAppearanceMedium"
             android:layout_width="wrap_content"
@@ -169,7 +94,6 @@
             <!--android:layout_alignParentLeft="true"-->
             <!--android:layout_alignParentTop="true"-->
             <TextView
-                android:layout_column="1"
                 android:id="@+id/poi_promedio"
                 style="?android:attr/textAppearanceMedium"
                 android:layout_width="wrap_content"
@@ -195,7 +119,6 @@
         android:layout_marginTop="10dp">
 
         <TextView
-            android:layout_column="1"
             android:text="@string/favorito"
             style="?android:attr/textAppearanceMedium"
             android:layout_width="wrap_content"
@@ -213,13 +136,13 @@
             android:id="@+id/checkbox_favorito"
             android:theme="@style/checkBoxStyle"
             android:clickable="false"
+            android:visibility="visible"
+
             android:layout_marginBottom="5dp"
             tools:context="ar.edu.unsam.poiapp.PoiDetailFragment"
             />
 
     </LinearLayout>
-
-    <!--</LinearLayout>-->
 
     <!--<View-->
     <!--android:layout_width="match_parent"-->
@@ -241,7 +164,9 @@
             android:textSize="23dp"
             android:textStyle="bold"
             android:textColor="@color/colorPrimaryDark"
+            android:gravity="center"
             android:textAlignment="center"
+            style="?android:attr/textAppearanceLargeInverse"
             android:layout_marginTop="10dp"
             android:padding="15dip"
             />
@@ -252,6 +177,7 @@
             android:layout_height="wrap_content"
             android:id="@+id/poi_reviews"
             android:textAppearance="?android:attr/textAppearanceMedium"
+            android:textColor="@color/colorPrimaryDark"
             tools:context="ar.edu.unsam.poiapp.PoiDetailFragment"
             />
         <!--android:layout_width="wrap_content"-->

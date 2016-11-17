@@ -76,10 +76,8 @@ public class PoiDetailActivity extends AppCompatActivity {
             // to navigate up one level in the application structure. For
             // more details, see the Navigation pattern on Android Design:
             //
-            // http://developer.android.com/design/patterns/navigation.html#up-vs-back
-            //
-            NavUtils.navigateUpTo(this, new Intent(this, PoiListActivity.class));
-//            navigateUpTo(new Intent(this, PoiListActivity.class));   // a partir de API 16
+//            NavUtils.navigateUpTo(this, new Intent(this, PoiListActivity.class));
+            navigateUpTo(new Intent(this, PoiListActivity.class));   // a partir de API 16
             return true;
         }
         return super.onOptionsItemSelected(item);
